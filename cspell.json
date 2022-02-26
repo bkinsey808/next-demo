@@ -6,9 +6,11 @@
     "words": [
         "avif",
         "deps",
+        "Docgen",
         "Durandal",
         "msedge",
         "Todos",
+        "unoptimized",
         "Vercel",
         "viewports"
     ],
