@@ -56,13 +56,12 @@ const config: PlaywrightTestConfig = {
       },
     },
 
-    // webkit commented out because it doesn't seem to be working for me on WSL2
-    // {
-    //   name: 'webkit',
-    //   use: {
-    //     ...devices['Desktop Safari'],
-    //   },
-    // },
+    {
+      name: 'webkit',
+      use: {
+        ...devices['Desktop Safari'],
+      },
+    },
 
     /* Test against mobile viewports. */
     // {
