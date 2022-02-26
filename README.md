@@ -1,8 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Level DX Starter
+
+This is a DX(developer experience)-focused starter project for NextJs that integrates an opinionated set of libraries and best practices into a single cohesive whole. This starter project is informed by experience with enterprise front end projects successfully built by large teams. Specific technologies may change, but best practices stand the test of time. I hope this project inspires your own next NextJs project.
 
 ## Getting Started
 
-First, run the development server:
+```bash
+git clone --depth=1 https://github.com/bkinsey808/next-demo.git my-project-name
+cd my-project-name
+yarn
+```
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Next steps
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -12,7 +24,7 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `src/pages/index.tsx`. The page auto-updates as you edit the file.
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
