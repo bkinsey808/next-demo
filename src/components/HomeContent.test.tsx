@@ -1,10 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Home from "../pages/index";
+import HomeContent from "./HomeContent";
 
-describe("Home", () => {
+describe("HomeContent", () => {
   it("renders a heading", () => {
-    render(<Home />);
+    render(<HomeContent />);
 
     const heading = screen.getByRole("heading", {
       name: /welcome to next\.js!/i,
