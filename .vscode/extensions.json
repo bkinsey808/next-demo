@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "formulahendry.auto-rename-tag",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "streetsidesoftware.code-spell-checker"
     ]
 }
