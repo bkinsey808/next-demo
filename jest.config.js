@@ -24,7 +24,11 @@ module.exports = {
     "^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$":
       "<rootDir>/__mocks__/fileMock.js",
   },
-  testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/.next/"],
+  testPathIgnorePatterns: [
+    "<rootDir>/node_modules/",
+    "<rootDir>/.next/",
+    "<rootDir>/e2e/", // ignore playwright tests
+  ],
   // Set's the jest environment to jsdom which is a browser-like environment.
   testEnvironment: "jsdom",
   // Transform source files through babel before running the tests.

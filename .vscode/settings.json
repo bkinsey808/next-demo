@@ -4,5 +4,6 @@
         "titleBar.activeBackground": "#633402",
         "titleBar.activeForeground": "#FFF9F3"
     },
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "jest.jestCommandLine": "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && yarn test"
 }
