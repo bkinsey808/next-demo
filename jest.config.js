@@ -1,7 +1,7 @@
 module.exports = {
   // Tells Jest that we want to collect via a glob pattern
   collectCoverageFrom: [
-    "**/*.{js,jsx,ts,tsx}",
+    "src/**/*.{js,jsx,ts,tsx}",
     "!**/*.d.ts",
     "!**/node_modules/**",
   ],
