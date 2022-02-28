@@ -1,6 +1,38 @@
-# Next Level DX Starter
+# Next Level DX Starter Project
 
 This is a DX(developer experience)-focused starter project for NextJs that integrates an opinionated set of libraries and best practices into a single cohesive whole. This starter project is informed by experience with enterprise front end projects successfully built by large teams. Specific technologies may change, but best practices stand the test of time. I hope this project inspires your own next NextJs project.
+
+## Features of this Project
+
+- NextJs
+- Typescript
+- Unit testing with React Testing Library and Jest
+- E2E testing with Playwright and Jest
+  - Playwright has a more modern async syntax compared with Cypress
+  - Very nice to use Jest for both unit and e2e tests
+  - e2e tests also support WebKit
+- Component demos with Storybook
+- Unit tests and storybook stories co-located with component code
+- Test coverage report with Istanbul
+- Bundle analysis with @next/bundle-analyzer and webpack-bundle-analyzer
+- Code formatting with Prettier
+  - usage enforced by lint rules
+- Linting with ESLint
+  - Relatively strict set of best practice lint rules
+  - Cognitive complexity linting with SonarJs
+- Source code moved into src/ directory
+- Absolute path alias
+  - @/ is src/
+- Circular dependency checking with madge
+- Set of recommended extensions for Visual Studio Code
+  - Code spell check with Code Spell Checker
+  - Code complexity feedback in editor with CodeMetrics
+  - Jest extension working for unit tests
+- Pre-push hook enforces:
+  - Tests pass
+  - Code is linted and formatted
+  - No circular dependencies detected
+- Continuous Integration example with GitHub Actions
 
 ## Getting Started
 

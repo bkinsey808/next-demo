@@ -11,13 +11,21 @@
     "build:sourcemap": "cross-env GENERATE_SOURCEMAP=true next build",
     "build:analyze": "yarn build:sourcemap && yarn analyze",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "echo \"Linting... \" && next lint",
     "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook -s public",
-    "test": "jest",
-    "test:coverage": "jest --coverage ./src",
-    "test:e2e": "playwright test"
+    "test": "echo \"Running unit tests... \" && jest",
+    "test:coverage": "echo \"Generating coverage report... \" && jest --coverage ./src",
+    "test:e2e": "echo \"Running e2e tests... \" && playwright test",
+    "check-circular-deps": "echo \"Checking for Circular dependencies... \" && madge --circular --extensions ts ./"
   },
+  "pre-push": [
+    "pre-push-msg",
+    "lint",
+    "check-circular-deps",
+    "test",
+    "test:e2e"
+  ],
   "dependencies": {
     "next": "12.1.0",
     "react": "17.0.2",
@@ -54,6 +62,7 @@
     "eslint-plugin-storybook": "^0.5.7",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
+    "madge": "^5.0.1",
     "prettier": "^2.5.1",
     "react-test-renderer": "^17.0.2",
     "typescript": "4.5.5"
