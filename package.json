@@ -18,7 +18,7 @@
     "test:coverage": "echo \"Generating coverage report... \" && jest --coverage ./src",
     "test:e2e": "echo \"Running e2e tests... \" && playwright test",
     "check-circular-deps": "echo \"Checking for Circular dependencies... \" && madge --circular --extensions ts ./",
-    "pre-push-msg": "echo \"Running pre-push script(s)... \" && exit 0"
+    "prepare": "husky install"
   },
   "pre-push": [
     "pre-push-msg",
@@ -29,7 +29,6 @@
   ],
   "dependencies": {
     "next": "12.1.0",
-    "pre-push": "^0.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
@@ -62,6 +61,7 @@
     "eslint-plugin-redundant-undefined": "^0.2.0",
     "eslint-plugin-sonarjs": "^0.12.0",
     "eslint-plugin-storybook": "^0.5.7",
+    "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "madge": "^5.0.1",
