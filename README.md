@@ -4,7 +4,7 @@ This is a DX(developer experience)-focused starter project for NextJs that integ
 
 ## Features of this Project
 
-- NextJs
+- [NextJs](https://nextjs.org/)
 - Typescript
 - Unit testing with React Testing Library and Jest
 - E2E testing with Playwright and Jest
