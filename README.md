@@ -28,7 +28,7 @@ This is a DX(developer experience)-focused starter project for NextJs that integ
   - Code spell check with Code Spell Checker
   - Code complexity feedback in editor with CodeMetrics
   - Jest extension working for unit tests
-- Pre-push hook enforces:
+- Pre-push hook with [Husky](https://typicode.github.io/husky):
   - Tests pass
   - Code is linted and formatted
   - No circular dependencies detected

@@ -11,7 +11,9 @@
     "build:sourcemap": "cross-env GENERATE_SOURCEMAP=true next build",
     "build:analyze": "yarn build:sourcemap && yarn analyze",
     "start": "next start",
-    "lint": "echo \"Linting... \" && next lint",
+    "lint": "echo \"Linting... \" && next lint && yarn lint:css",
+    "lint:css": "stylelint **/*.{scss,css}",
+    "lint:css:fix": "stylelint --fix **/*.{scss,css}",
     "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook -s public",
     "test": "echo \"Running unit tests... \" && jest",
@@ -67,6 +69,10 @@
     "madge": "^5.0.1",
     "prettier": "^2.5.1",
     "react-test-renderer": "^17.0.2",
+    "stylelint": "^14.5.3",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-webpack-plugin": "^3.1.1",
     "typescript": "4.5.5"
   }
 }

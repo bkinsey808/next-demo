@@ -1,11 +1,6 @@
-{
-  "plugins": [
-    "@typescript-eslint",
-    "sonarjs",
-    "redundant-undefined",
-    "prettier"
-  ],
-  "extends": [
+module.exports = {
+  plugins: ["@typescript-eslint", "sonarjs", "redundant-undefined", "prettier"],
+  extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -13,20 +8,20 @@
     "next/core-web-vitals",
     "plugin:storybook/recommended",
     "plugin:@next/next/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
   ],
-  "rules": {
+  rules: {
     "@typescript-eslint/no-shadow": ["error"],
     "@typescript-eslint/no-unused-vars": [
       "error",
-      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+      { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
     ],
     "@typescript-eslint/no-explicit-any": ["error"],
     "redundant-undefined/redundant-undefined": "error",
-    "curly": "error",
-    "eqeqeq": ["error", "always"],
+    curly: "error",
+    eqeqeq: ["error", "always"],
     "no-duplicate-imports": "error",
-    "no-empty": ["error", { "allowEmptyCatch": true }],
+    "no-empty": ["error", { allowEmptyCatch: true }],
     "no-implicit-globals": "error",
     "no-invalid-this": "error",
     "no-lone-blocks": "error",
@@ -39,9 +34,9 @@
     "no-throw-literal": "error",
     "no-unreachable-loop": "error",
     "no-unused-expressions": "error",
-    "yoda": "error"
+    yoda: "error",
   },
-  "env": {
-    "jest": true
-  }
-}
+  env: {
+    jest: true,
+  },
+};
