@@ -6,6 +6,7 @@
     "eamodio.gitlens",
     "streetsidesoftware.code-spell-checker",
     "christian-kohler.path-intellisense",
-    "Orta.vscode-jest"
+    "orta.vscode-jest",
+    "KnisterPeter.vscode-commitizen"
   ]
 }
