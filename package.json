@@ -20,7 +20,8 @@
     "test:coverage": "echo \"Generating coverage report... \" && jest --coverage ./src",
     "test:e2e": "echo \"Running e2e tests... \" && playwright test",
     "check-circular-deps": "echo \"Checking for Circular dependencies... \" && madge --circular --extensions ts ./",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "config": {
     "commitizen": {
