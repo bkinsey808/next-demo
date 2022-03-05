@@ -2,6 +2,8 @@ module.exports = {
   // Tells Jest that we want to collect via a glob pattern
   collectCoverageFrom: [
     "src/**/*.{js,jsx,ts,tsx}",
+    // exclude storybook stories from coverage
+    "!src/**/*.stories.{js,jsx,ts,tsx}",
     "!**/*.d.ts",
     "!**/node_modules/**",
   ],
