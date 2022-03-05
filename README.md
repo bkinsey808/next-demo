@@ -1,6 +1,6 @@
-# Next Level DX Starter Project
+# NextJs DX-focused Starter Project
 
-This is a DX(developer experience)-focused starter project for NextJs that integrates an opinionated set of libraries and best practices into a single cohesive whole. This starter project is informed by experience with enterprise front end projects successfully built by large teams. Specific technologies may change, but best practices stand the test of time. I hope this project inspires your own next NextJs project.
+This is a developer experience focused starter project for NextJs which integrates an opinionated set of libraries and best practices into a single cohesive whole. This starter project is informed by experience with enterprise front end projects successfully built by large teams. Specific technologies may change, but best practices stand the test of time. I hope this project inspires your own next NextJs project.
 
 ## Features of this Project
 
