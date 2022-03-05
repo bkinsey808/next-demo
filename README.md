@@ -17,9 +17,12 @@ This is a developer experience focused starter project for NextJs which integrat
 - Bundle analysis with @next/bundle-analyzer and webpack-bundle-analyzer
 - Code formatting with Prettier
   - usage enforced by lint rules
-- Linting with ESLint
+- Linting
+  - Code linting with eslint
+    - Cognitive complexity linting with SonarJs
+  - Style linting with stylelint
+  - Commit Message linting with commitlint
   - Relatively strict set of best practice lint rules
-  - Cognitive complexity linting with SonarJs
 - Source code moved into src/ directory
 - Absolute path alias
   - @/ is src/
@@ -28,10 +31,13 @@ This is a developer experience focused starter project for NextJs which integrat
   - Code spell check with Code Spell Checker
   - Code complexity feedback in editor with CodeMetrics
   - Jest extension working for unit tests
-- Pre-push hook with [Husky](https://typicode.github.io/husky):
-  - Tests pass
-  - Code is linted and formatted
-  - No circular dependencies detected
+- Git hooks with [Husky](https://typicode.github.io/husky)
+  - pre-push hook
+    - Tests pass
+    - Code is linted and formatted
+    - No circular dependencies detected
+  - commit-msg hook
+    - Commit message is linted
 - Continuous Integration example with GitHub Actions
 
 ## Getting Started
