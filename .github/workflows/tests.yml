@@ -35,6 +35,9 @@ jobs:
         with:
           node-version: "15.x"
 
+      - name: install cross-env
+        run: yarn global add cross-env && export PATH="$(yarn global bin):$PATH"
+
       - name: Build & analyze
         run: mkdir -p .next/analyze/master && yarn analyze | tee .next/analyze/output.txt
 
