@@ -12,7 +12,7 @@ import { devices } from "@playwright/test";
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: "./e2e",
+  testDir: `./test/${process.env.VISUAL ? "visual" : "e2e"}`,
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -39,6 +39,9 @@ const config: PlaywrightTestConfig = {
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
+    // trace: "on",
+
+    // headless: false,
   },
 
   /* Configure projects for major browsers */
@@ -98,8 +101,8 @@ const config: PlaywrightTestConfig = {
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: "yarn dev",
-    port: 3000,
+    command: process.env.VISUAL ? "yarn storybook" : "yarn dev",
+    port: process.env.VISUAL ? 6006 : 3000,
   },
 };
 
