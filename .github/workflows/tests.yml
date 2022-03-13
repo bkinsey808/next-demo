@@ -23,6 +23,8 @@ jobs:
         run: yarn check-circular-deps
       - name: Run Lint
         run: yarn lint
+      - name: Run Build
+        run: yarn build
 
       # see https://jeffchen.dev/posts/Measuring-Bundle-Sizes-With-Next-js-And-Github-Actions-Part-2/
 
@@ -34,9 +36,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "15.x"
-
-      - name: Build
-        run: ./node_modules/.bin/next build
 
       - name: Analyze
         run: mkdir -p .next/analyze/master && node scripts/analyze-bundles.js | tee .next/analyze/output.txt
