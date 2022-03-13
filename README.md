@@ -4,6 +4,10 @@ This is a developer experience focused starter project for NextJs which integrat
 
 ## Features of this Project
 
+- Perfect lighthouse score (so far...)
+
+  ![](/lighthouse.png)
+
 - [NextJs](https://nextjs.org/)
 - Typescript
 - Unit testing with React Testing Library and Jest
