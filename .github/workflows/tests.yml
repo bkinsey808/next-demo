@@ -36,7 +36,7 @@ jobs:
           node-version: "15.x"
 
       - name: Build & analyze
-        run: mkdir -p .next/analyze/master && yarn build && node scripts/analyze-bundles.js | tee .next/analyze/output.txt
+        run: yarn analyze && mkdir -p .next/analyze/master | tee .next/analyze/output.txt
 
       - name: Upload bundle
         uses: actions/upload-artifact@v2
