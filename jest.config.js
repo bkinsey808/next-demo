@@ -29,7 +29,8 @@ module.exports = {
   testPathIgnorePatterns: [
     "<rootDir>/node_modules/",
     "<rootDir>/.next/",
-    "<rootDir>/test/", // ignore playwright tests
+    "<rootDir>/test/e2e", // ignore playwright tests
+    "<rootDir>/test/visual", // ignore playwright tests
   ],
   // Set's the jest environment to jsdom which is a browser-like environment.
   testEnvironment: "jsdom",
