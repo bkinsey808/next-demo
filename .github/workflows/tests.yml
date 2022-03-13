@@ -17,12 +17,8 @@ jobs:
         run: yarn
       - name: Install Playwright
         run: npx playwright install --with-deps
-      - name: Run Jest
+      - name: Run Tests
         run: yarn test
-      - name: Run Playwright e2e tests
-        run: yarn test:e2e
-      - name: Run Playwright visual tests
-        run: yarn test:visual
       - name: Check circular dependencies
         run: yarn check-circular-deps
       - name: Run Lint
