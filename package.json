@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "analyze": "cross-env ANALYZE=true NODE_ENV=production next build && node scripts/analyze-bundles.js",
+    "analyze": "cross-env ANALYZE=true next build && node scripts/analyze-bundles.js",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
     "build": "next build",
