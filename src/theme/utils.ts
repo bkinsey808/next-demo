@@ -1,4 +1,6 @@
-import { DESIGN_TOKENS } from "./designTokens";
+import DESIGN_TOKENS from "./designTokens";
+
+export type DesignTokens = keyof typeof DESIGN_TOKENS;
 
 /** iterate thru design tokens and create css variables for each of them */
 export const setCssVariablesFromDesignTokens = () => {
