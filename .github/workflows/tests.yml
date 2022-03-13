@@ -36,7 +36,7 @@ jobs:
           node-version: "15.x"
 
       - name: Build
-        run: yarn build
+        run: ./node_modules/.bin/next build
 
       - name: Analyze
         run: mkdir -p .next/analyze/master && node scripts/analyze-bundles.js | tee .next/analyze/output.txt
