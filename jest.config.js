@@ -19,17 +19,17 @@ module.exports = {
     "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
 
     // Handle CSS imports (without CSS modules)
-    "^.+\\.(css|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
+    "^.+\\.(css|sass|scss)$": "<rootDir>/test/__mocks__/styleMock.js",
 
     /* Handle image imports
       https://jestjs.io/docs/webpack#handling-static-assets */
     "^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$":
-      "<rootDir>/__mocks__/fileMock.js",
+      "<rootDir>/test/__mocks__/fileMock.js",
   },
   testPathIgnorePatterns: [
     "<rootDir>/node_modules/",
     "<rootDir>/.next/",
-    "<rootDir>/e2e/", // ignore playwright tests
+    "<rootDir>/test/", // ignore playwright tests
   ],
   // Set's the jest environment to jsdom which is a browser-like environment.
   testEnvironment: "jsdom",

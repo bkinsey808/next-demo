@@ -20,6 +20,8 @@
     "test:coverage": "echo \"Generating coverage report... \" && jest --coverage ./src",
     "test:e2e": "echo \"Running e2e tests... \" && playwright test",
     "test:e2e:update": "echo \"Updating e2e snapshots... \" && playwright test --update-snapshots",
+    "test:visual": "echo \"Running visual tests... \" && cross-env VISUAL=true playwright test",
+    "test:visual:update": "echo \"Running visual tests... \" && cross-env VISUAL=true playwright test --update-snapshots",
     "check-circular-deps": "echo \"Checking for Circular dependencies... \" && madge --circular --extensions ts ./",
     "prepare": "husky install",
     "commit": "cz"
