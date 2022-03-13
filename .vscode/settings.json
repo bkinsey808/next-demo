@@ -5,10 +5,10 @@
     "titleBar.activeForeground": "#FFF9F3"
   },
   "editor.formatOnSave": true,
-  "jest.jestCommandLine": "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && yarn test",
+  "jest.jestCommandLine": "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && yarn test:unit",
   "codemetrics.nodeconfiguration.JsxElement": 0.1,
   "codemetrics.nodeconfiguration.JsxSelfClosingElement": 0.1,
   "codemetrics.basics.ComplexityLevelNormal": 6,
   "editor.tabSize": 2,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
