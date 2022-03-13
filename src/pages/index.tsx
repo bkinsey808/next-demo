@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import HomeContent from "@/components/HomeContent";
 
+import HomeContent from "@/components/HomeContent";
 import { setCssVariablesFromDesignTokens } from "@/theme/utils";
 
 // client side only
