@@ -7,6 +7,7 @@
     "analyze": "cross-env ANALYZE=true NODE_ENV=production next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
+    "analyze:size": "ANALYZE=true NODE_ENV=production next build && node scripts/analyze-bundles.js",
     "build": "next build",
     "build:sourcemap": "cross-env GENERATE_SOURCEMAP=true next build",
     "build:analyze": "yarn build:sourcemap && yarn analyze",
