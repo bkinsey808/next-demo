@@ -1,11 +1,11 @@
 name: Analyze Bundle Size
 
-# Run this workflow on every Pull Request action as well as all pushes to master
+# Run this workflow on every Pull Request action as well as all pushes to main
 on:
   pull_request:
   push:
     branches:
-      - master
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -33,7 +33,7 @@ jobs:
         uses: yarn
 
       - name: Build & analyze
-        run: mkdir -p .next/analyze/master && yarn analyze:size | tee .next/analyze/output.txt
+        run: mkdir -p .next/analyze/main && yarn analyze:size | tee .next/analyze/output.txt
 
       - name: Upload bundle
         uses: actions/upload-artifact@v2
