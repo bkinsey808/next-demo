@@ -5,6 +5,7 @@ import {
   SunIcon,
   CheckCircleIcon,
 } from "@heroicons/react/solid";
+import clsx from "clsx";
 import { FC, Fragment } from "react";
 import { useTernaryDarkMode } from "usehooks-ts";
 
@@ -90,23 +91,27 @@ export const DarkModeControl: FC = () => {
               {ITEMS.map((itemTernaryDarkMode) => {
                 const item = ITEM_CONFIG[itemTernaryDarkMode];
                 const Icon = item.iconType;
+                const activeAndSelected =
+                  ternaryDarkMode === itemTernaryDarkMode;
 
                 return (
                   <Menu.Item key={itemTernaryDarkMode}>
                     {({ active }) => (
                       <button
                         onClick={() => setTernaryDarkMode(itemTernaryDarkMode)}
-                        className={`${
-                          active ? "bg-violet-500 text-white" : "text-gray-900"
-                        }
-                        group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                        className={clsx(
+                          "group flex rounded-md items-center w-full px-2 py-2 text-sm",
+                          {
+                            "bg-violet-500 text-white": active,
+                            "text-gray-900": !active,
+                          }
+                        )}
                       >
                         <CheckCircleIcon
-                          className={`w-5 h-5 mr-2 ${
-                            ternaryDarkMode === itemTernaryDarkMode
-                              ? "visible"
-                              : "invisible"
-                          }`}
+                          className={clsx("w-5 h-5 mr-2", {
+                            visible: activeAndSelected,
+                            invisible: !activeAndSelected,
+                          })}
                         />
                         <Icon className="w-5 h-5 mr-2" aria-hidden="true" />
                         {item.label}
