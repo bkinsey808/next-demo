@@ -11,6 +11,8 @@
         "Durandal",
         "eqeqeq",
         "gzipped",
+        "headlessui",
+        "heroicons",
         "mkdir",
         "msedge",
         "nodetype",
@@ -23,6 +25,7 @@
         "Todos",
         "trivago",
         "unoptimized",
+        "usehooks",
         "Vercel",
         "viewports"
     ],

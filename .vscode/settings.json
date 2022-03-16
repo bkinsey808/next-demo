@@ -10,5 +10,13 @@
   "codemetrics.nodeconfiguration.JsxSelfClosingElement": 0.1,
   "codemetrics.basics.ComplexityLevelNormal": 6,
   "editor.tabSize": 2,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "javascript": "javascript",
+    "css": "css"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }

@@ -5,7 +5,7 @@ import HomeContent from "./HomeContent";
 
 describe("HomeContent", () => {
   it("renders a heading", () => {
-    render(<HomeContent />);
+      render(<HomeContent />);
 
     const heading = screen.getByRole("heading", {
       name: /welcome to next\.js!/i,
