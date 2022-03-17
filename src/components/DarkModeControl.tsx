@@ -43,26 +43,24 @@ export const DarkModeControl: FC = () => {
   return (
     <div className="w-64 text-right fixed top-16">
       <Menu as="div" className="relative inline-block text-left">
-        <div>
-          <Menu.Button
-            className="
-              inline-flex 
-              justify-center 
-              w-full
-              px-4 py-2 
-              text-sm 
-              font-medium
-              text-white
-              bg-black 
-              rounded-md 
-              bg-opacity-20 hover:bg-opacity-30 
-              focus:outline-none 
-              focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
-            "
-          >
-            <MenuButtonIcon className="w-5 h-5" />
-          </Menu.Button>
-        </div>
+        <Menu.Button
+          className="
+            inline-flex 
+            justify-center 
+            w-full
+            px-4 py-2 
+            text-sm 
+            font-medium
+            text-white
+            bg-black 
+            rounded-md 
+            bg-opacity-20 hover:bg-opacity-30 
+            focus:outline-none 
+            focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
+          "
+        >
+          <MenuButtonIcon className="w-5 h-5" />
+        </Menu.Button>
         <Transition
           as={Fragment}
           enter="transition ease-out duration-100"
