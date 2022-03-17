@@ -1,4 +1,10 @@
-import { useState, MouseEventHandler, useEffect, SVGProps } from "react";
+import {
+  useState,
+  MouseEventHandler,
+  useEffect,
+  SVGProps,
+  useRef,
+} from "react";
 import { useEventListener, useTernaryDarkMode } from "usehooks-ts";
 
 import { ITEM_CONFIG, TernaryDarkModeEnum, TIMEOUT_DURATION } from "./consts";
@@ -9,17 +15,16 @@ export const useDarkModeControl = () => {
   const { ternaryDarkMode, setTernaryDarkMode } = useTernaryDarkMode();
   const [MenuButtonIcon, setMenuButtonIcon] = useState<SVGIconType>();
   const [hovered, setHovered] = useState(false);
+  const [hovering, setHovering] = useState(false);
   const [selecting, setSelecting] = useState(false);
-  const [recentMouseDown, setRecentMouseDown] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     setMenuButtonIcon(ITEM_CONFIG[ternaryDarkMode].Icon as SVGIconType);
   }, [ternaryDarkMode, setMenuButtonIcon]);
 
   const keyupHandler = (event: WindowEventMap["keyup"]) => {
-    console.log(event.key);
     if (event.key === "Escape") {
-      console.log("esc");
       setHovered(false);
       setSelecting(true);
       setTimeout(() => {
@@ -39,7 +44,8 @@ export const useDarkModeControl = () => {
         setHovered(true);
       }
     }
-    if (event.key === "Tab" && hovered) {
+    if (event.key === "Tab" && hovered && !hovering) {
+      menuButtonRef.current?.focus();
       setHovered(false);
     }
   };
@@ -78,18 +84,20 @@ export const useDarkModeControl = () => {
   const onMouseDown: MouseEventHandler<HTMLDivElement> = () => {
     setHovered(!hovered);
     setSelecting(true);
-    setRecentMouseDown(true);
     setTimeout(() => {
       setSelecting(false);
-      setRecentMouseDown(false);
     }, TIMEOUT_DURATION / 2);
   };
 
-  const onBlur = () => {
-    if (recentMouseDown) {
+  const onFocus = () => {
+    if (selecting) {
       return;
     }
-    console.log("onblur");
+    setHovered(true);
+    setHovering(true);
+    setTimeout(() => {
+      setHovering(false);
+    }, TIMEOUT_DURATION);
   };
 
   return {
@@ -97,9 +105,10 @@ export const useDarkModeControl = () => {
     withTimeoutClose,
     getOnMenuItemButtonClick,
     onMouseDown,
-    onBlur,
+    onFocus,
     MenuButtonIcon,
     show,
     ternaryDarkMode: ternaryDarkMode as TernaryDarkModeEnum,
+    menuButtonRef,
   };
 };

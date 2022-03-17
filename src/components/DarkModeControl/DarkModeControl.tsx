@@ -13,16 +13,18 @@ export const DarkModeControl: FC = () => {
     show,
     ternaryDarkMode,
     onMouseDown,
-    onBlur,
+    onFocus,
     getOnMenuItemButtonClick,
+    menuButtonRef,
   } = useDarkModeControl();
 
   return (
     <div className="w-64 text-right">
       <Menu as="div" className="relative inline-block text-left">
-        <div onMouseDown={onMouseDown} onBlur={onBlur}>
+        <div onMouseDown={onMouseDown}>
           <Menu.Button
-            onFocus={withTimeoutOpen}
+            ref={menuButtonRef}
+            onFocus={onFocus}
             onMouseEnter={withTimeoutOpen}
             onMouseLeave={withTimeoutClose}
             className="
