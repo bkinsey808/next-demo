@@ -34,20 +34,26 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
     Hello world!!
   </h1>
   <div
-    className="w-64 text-right fixed top-16"
+    className="w-64 text-right"
   >
     <div
       className="relative inline-block text-left"
     >
-      <div>
+      <div
+        onBlur={[Function]}
+        onMouseDown={[Function]}
+      >
         <button
           aria-expanded={false}
           aria-haspopup={true}
-          className=" inline-flex  justify-center  w-full px-4 py-2  text-sm  font-medium text-white bg-black  rounded-md  bg-opacity-20 hover:bg-opacity-30  focus:outline-none  focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+          className=" inline-flex  justify-center  w-full px-4 py-2  text-sm  font-medium text-white bg-black  rounded-md  bg-opacity-20 hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
           id="headlessui-menu-button-1"
           onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           type="button"
         >
           <svg
