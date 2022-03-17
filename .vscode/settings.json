@@ -18,5 +18,7 @@
   },
   "editor.quickSuggestions": {
     "strings": true
-  }
+  },
+  "zenMode.fullScreen": false,
+  "zenMode.centerLayout": false
 }
