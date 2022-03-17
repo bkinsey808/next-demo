@@ -12,7 +12,6 @@ export const DarkModeControl: FC = () => {
     MenuButtonIcon,
     show,
     ternaryDarkMode,
-    onKeyUp,
     onMouseDown,
     onBlur,
     getOnMenuItemButtonClick,
@@ -26,7 +25,6 @@ export const DarkModeControl: FC = () => {
             onFocus={withTimeoutOpen}
             onMouseEnter={withTimeoutOpen}
             onMouseLeave={withTimeoutClose}
-            onKeyUp={onKeyUp}
             className="
               inline-flex 
               justify-center 

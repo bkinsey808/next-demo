@@ -25,7 +25,16 @@ export const DarkModeMenuItem: FC<{
           ref={buttonRef}
           onClick={getOnMenuItemButtonClick(itemTernaryDarkMode)}
           className={clsx(
-            "group flex rounded-md items-center w-full px-2 py-2 text-sm",
+            `
+              group 
+              flex 
+              rounded-md 
+              items-center 
+              w-full 
+              text-sm 
+              px-2 py-2 
+              focus:outline-none focus-visible:outline-none
+            `,
             {
               "bg-violet-500 text-white": active,
               "text-gray-900": !active,

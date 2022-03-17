@@ -1,10 +1,4 @@
-import {
-  useState,
-  KeyboardEvent,
-  MouseEventHandler,
-  useEffect,
-  SVGProps,
-} from "react";
+import { useState, MouseEventHandler, useEffect, SVGProps } from "react";
 import { useEventListener, useTernaryDarkMode } from "usehooks-ts";
 
 import { ITEM_CONFIG, TernaryDarkModeEnum, TIMEOUT_DURATION } from "./consts";
@@ -22,7 +16,8 @@ export const useDarkModeControl = () => {
     setMenuButtonIcon(ITEM_CONFIG[ternaryDarkMode].Icon as SVGIconType);
   }, [ternaryDarkMode, setMenuButtonIcon]);
 
-  const keydownHandler = (event: WindowEventMap["keydown"]) => {
+  const keyupHandler = (event: WindowEventMap["keyup"]) => {
+    console.log(event.key);
     if (event.key === "Escape") {
       console.log("esc");
       setHovered(false);
@@ -32,9 +27,24 @@ export const useDarkModeControl = () => {
         setHovered(false);
       }, TIMEOUT_DURATION);
     }
+    if (event.key === "Enter") {
+      if (hovered) {
+        setHovered(false);
+        setSelecting(true);
+        setTimeout(() => {
+          setHovered(false);
+          setSelecting(false);
+        }, TIMEOUT_DURATION * 5);
+      } else if (!selecting) {
+        setHovered(true);
+      }
+    }
+    if (event.key === "Tab" && hovered) {
+      setHovered(false);
+    }
   };
 
-  useEventListener("keydown", keydownHandler);
+  useEventListener("keyup", keyupHandler);
 
   let timeout: NodeJS.Timeout;
 
@@ -62,13 +72,6 @@ export const useDarkModeControl = () => {
       }, TIMEOUT_DURATION);
     };
 
-  const onKeyUp = (event: KeyboardEvent<HTMLButtonElement>) => {
-    if (event.key === "Escape") {
-      setHovered(false);
-      clearTimeout(timeout);
-    }
-  };
-
   /** should we show the menu? */
   const show = hovered && !selecting;
 
@@ -93,7 +96,6 @@ export const useDarkModeControl = () => {
     withTimeoutOpen,
     withTimeoutClose,
     getOnMenuItemButtonClick,
-    onKeyUp,
     onMouseDown,
     onBlur,
     MenuButtonIcon,
