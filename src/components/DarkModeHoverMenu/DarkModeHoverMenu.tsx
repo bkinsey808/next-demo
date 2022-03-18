@@ -41,8 +41,8 @@ const MenuItemComponent: MenuItemComponentType<
 
 export const DarkModeHoverMenu: FC = () => {
   const { ternaryDarkMode, setTernaryDarkMode } = useTernaryDarkMode();
-  const onSelect = (selectedKey: string) => {
-    setTernaryDarkMode(selectedKey as TernaryDarkModeEnum);
+  const onSelect = (selectedKey: TernaryDarkModeEnum) => {
+    setTernaryDarkMode(selectedKey);
   };
 
   return (
