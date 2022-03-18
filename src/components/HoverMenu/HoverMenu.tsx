@@ -1,28 +1,45 @@
 import { Menu, Transition } from "@headlessui/react";
-import { FC, Fragment } from "react";
+import { Fragment } from "react";
 
-import { DarkModeMenuItem } from "./DarkModeMenuItem";
-import { ITEMS } from "./consts";
-import { useDarkModeControl } from "./useDarkModeControl";
+import { HoverMenuItem } from "./HoverMenuItem";
+import {
+  MenuButtonComponentType,
+  MenuItemComponentType,
+  MenuItemConfig,
+} from "./types";
+import { useHoverMenu } from "./useHoverMenuControl";
 
-export const DarkModeControl: FC = () => {
+export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
+  items,
+  itemConfig,
+  activeKey,
+  MenuButtonComponent,
+  MenuItemComponent,
+  onSelect,
+}: {
+  activeKey: MenuItemKeyType;
+  items: MenuItemKeyType[];
+  itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
+  MenuButtonComponent: MenuButtonComponentType<MenuItemKeyType>;
+  MenuItemComponent: MenuItemComponentType<MenuItemConfigData>;
+  onSelect: (key: string) => void;
+}) => {
   const {
     withTimeoutOpen,
     withTimeoutClose,
-    MenuButtonIcon,
     show,
-    ternaryDarkMode,
     onMouseDown,
     onFocus,
     getOnMenuItemButtonClick,
     menuButtonRef,
-  } = useDarkModeControl();
+  } = useHoverMenu({ onSelect });
 
   return (
     <div className="w-64 text-right">
       <Menu as="div" className="relative inline-block text-left">
         <div onMouseDown={onMouseDown}>
           <Menu.Button
+            as="button"
             ref={menuButtonRef}
             onFocus={onFocus}
             onMouseEnter={withTimeoutOpen}
@@ -41,7 +58,7 @@ export const DarkModeControl: FC = () => {
               focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
             "
           >
-            {MenuButtonIcon && <MenuButtonIcon className="w-5 h-5" />}
+            <MenuButtonComponent activeKey={activeKey} />
           </Menu.Button>
         </div>
         <Transition
@@ -72,13 +89,15 @@ export const DarkModeControl: FC = () => {
             "
           >
             <div className="px-1 py-1 ">
-              {ITEMS.map((itemTernaryDarkMode) => {
+              {items.map((itemKey) => {
                 return (
-                  <DarkModeMenuItem
-                    key={itemTernaryDarkMode}
-                    ternaryDarkMode={ternaryDarkMode}
-                    itemTernaryDarkMode={itemTernaryDarkMode}
+                  <HoverMenuItem
+                    key={itemKey}
+                    itemKey={itemKey}
+                    activeKey={activeKey}
+                    itemConfig={itemConfig}
                     getOnMenuItemButtonClick={getOnMenuItemButtonClick}
+                    MenuItemComponent={MenuItemComponent}
                   />
                 );
               })}

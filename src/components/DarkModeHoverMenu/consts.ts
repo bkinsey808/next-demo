@@ -1,18 +1,24 @@
 import { DesktopComputerIcon, MoonIcon, SunIcon } from "@heroicons/react/solid";
 
+import { MenuItemConfig } from "../HoverMenu";
+import { DarkModeMenuItemConfigData } from "./types";
+
 export const enum TernaryDarkModeEnum {
   DARK = "dark",
   LIGHT = "light",
   SYSTEM = "system",
 }
 
-export const ITEMS = [
+export const ITEMS: TernaryDarkModeEnum[] = [
   TernaryDarkModeEnum.DARK,
   TernaryDarkModeEnum.SYSTEM,
   TernaryDarkModeEnum.LIGHT,
-] as const;
+];
 
-export const ITEM_CONFIG = {
+export const ITEM_CONFIG: MenuItemConfig<
+  DarkModeMenuItemConfigData,
+  TernaryDarkModeEnum
+> = {
   [TernaryDarkModeEnum.LIGHT]: {
     Icon: SunIcon,
     label: "Light Mode",
@@ -26,5 +32,3 @@ export const ITEM_CONFIG = {
     label: "Dark Mode",
   },
 } as const;
-
-export const TIMEOUT_DURATION = 200 as const;

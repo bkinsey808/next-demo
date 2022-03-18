@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { FC } from "react";
 
-import { DarkModeControl } from "./DarkModeControl";
+import { DarkModeHoverMenu } from "./DarkModeHoverMenu";
 import { HelloWorld } from "./HelloWorld";
 import styles from "./HomeContent.module.css";
 
@@ -16,7 +16,7 @@ const HomeContent: FC = () => {
       </Head>
 
       <HelloWorld />
-      <DarkModeControl />
+      <DarkModeHoverMenu />
 
       <main className={styles.main}>
         <h1 className={styles.title}>

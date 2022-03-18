@@ -1,27 +1,17 @@
-import {
-  useState,
-  MouseEventHandler,
-  useEffect,
-  SVGProps,
-  useRef,
-} from "react";
-import { useEventListener, useTernaryDarkMode } from "usehooks-ts";
+import { useState, MouseEventHandler, useRef } from "react";
+import { useEventListener } from "usehooks-ts";
 
-import { ITEM_CONFIG, TernaryDarkModeEnum, TIMEOUT_DURATION } from "./consts";
+import { TIMEOUT_DURATION } from "./consts";
 
-type SVGIconType = (props: SVGProps<SVGSVGElement>) => JSX.Element;
-
-export const useDarkModeControl = () => {
-  const { ternaryDarkMode, setTernaryDarkMode } = useTernaryDarkMode();
-  const [MenuButtonIcon, setMenuButtonIcon] = useState<SVGIconType>();
+export const useHoverMenu = ({
+  onSelect,
+}: {
+  onSelect: (itemKey: string) => void;
+}) => {
   const [hovered, setHovered] = useState(false);
   const [hovering, setHovering] = useState(false);
   const [selecting, setSelecting] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    setMenuButtonIcon(ITEM_CONFIG[ternaryDarkMode].Icon as SVGIconType);
-  }, [ternaryDarkMode, setMenuButtonIcon]);
 
   const keyupHandler = (event: WindowEventMap["keyup"]) => {
     if (event.key === "Escape") {
@@ -67,16 +57,15 @@ export const useDarkModeControl = () => {
     }
   };
 
-  const getOnMenuItemButtonClick =
-    (itemTernaryDarkMode: TernaryDarkModeEnum) => () => {
-      setTernaryDarkMode(itemTernaryDarkMode);
-      clearTimeout(timeout);
-      setSelecting(true);
-      setHovered(false);
-      setTimeout(() => {
-        setSelecting(false);
-      }, TIMEOUT_DURATION);
-    };
+  const getOnMenuItemButtonClick = (clickedKey: string) => () => {
+    clearTimeout(timeout);
+    setSelecting(true);
+    setHovered(false);
+    setTimeout(() => {
+      setSelecting(false);
+    }, TIMEOUT_DURATION);
+    onSelect?.(clickedKey);
+  };
 
   /** should we show the menu? */
   const show = hovered && !selecting;
@@ -106,9 +95,7 @@ export const useDarkModeControl = () => {
     getOnMenuItemButtonClick,
     onMouseDown,
     onFocus,
-    MenuButtonIcon,
     show,
-    ternaryDarkMode: ternaryDarkMode as TernaryDarkModeEnum,
     menuButtonRef,
   };
 };
