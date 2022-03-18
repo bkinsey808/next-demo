@@ -15,7 +15,7 @@ const MenuButtonComponent: MenuButtonComponentType<TernaryDarkModeEnum> = ({
   activeKey,
 }) => {
   const MenuButtonIcon = ITEM_CONFIG[activeKey].Icon;
-  return <>{MenuButtonIcon && <MenuButtonIcon className="w-5 h-5" />}</>;
+  return <MenuButtonIcon className="w-5 h-5" />;
 };
 
 const MenuItemComponent: MenuItemComponentType<
