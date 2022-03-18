@@ -2,20 +2,23 @@ export type MenuItemConfig<Data, MenuItemKeyType extends string> = {
   [key in MenuItemKeyType]: Data;
 };
 
-export type MenuButtonComponentType<KeyType> = ({
+export type MenuButtonComponentType<MenuItemKeyType extends string> = ({
   activeKey,
 }: {
-  activeKey: KeyType;
+  activeKey: MenuItemKeyType;
 }) => JSX.Element;
 
-export type MenuItemComponentType<MenuItemConfigData> = ({
+export type MenuItemComponentType<
+  MenuItemConfigData,
+  MenuItemKeyType extends string
+> = ({
   itemKey,
   itemConfig,
   active,
   selected,
 }: {
-  itemKey: KeyType;
-  itemConfig: MenuItemConfig<MenuItemConfigData, KeyType>;
+  itemKey: MenuItemKeyType;
+  itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
   active: boolean;
   selected: boolean;
 }) => JSX.Element;

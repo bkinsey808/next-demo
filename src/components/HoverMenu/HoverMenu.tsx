@@ -21,8 +21,8 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
   items: MenuItemKeyType[];
   itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
   MenuButtonComponent: MenuButtonComponentType<MenuItemKeyType>;
-  MenuItemComponent: MenuItemComponentType<MenuItemConfigData>;
-  onSelect: (key: string) => void;
+  MenuItemComponent: MenuItemComponentType<MenuItemConfigData, MenuItemKeyType>;
+  onSelect: (key: MenuItemKeyType) => void;
 }) => {
   const {
     withTimeoutOpen,

@@ -4,18 +4,21 @@ import { useEffect, useRef } from "react";
 
 import { MenuItemComponentType, MenuItemConfig } from "./types";
 
-export const HoverMenuItem = <MenuItemConfigData,>({
+export const HoverMenuItem = <
+  MenuItemConfigData,
+  MenuItemKeyType extends string
+>({
   activeKey,
   itemKey,
   itemConfig,
   getOnMenuItemButtonClick,
   MenuItemComponent,
 }: {
-  activeKey: string;
-  itemKey: string;
-  itemConfig: MenuItemConfig<MenuItemConfigData>;
-  getOnMenuItemButtonClick: (key: string) => () => void;
-  MenuItemComponent: MenuItemComponentType<MenuItemConfigData>;
+  activeKey: MenuItemKeyType;
+  itemKey: MenuItemKeyType;
+  itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
+  getOnMenuItemButtonClick: (key: MenuItemKeyType) => () => void;
+  MenuItemComponent: MenuItemComponentType<MenuItemConfigData, MenuItemKeyType>;
 }) => {
   const activeAndSelected = activeKey === itemKey;
   const buttonRef = useRef<HTMLButtonElement>(null);

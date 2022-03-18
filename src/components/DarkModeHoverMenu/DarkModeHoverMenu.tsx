@@ -18,12 +18,10 @@ const MenuButtonComponent: MenuButtonComponentType<TernaryDarkModeEnum> = ({
   return <>{MenuButtonIcon && <MenuButtonIcon className="w-5 h-5" />}</>;
 };
 
-const MenuItemComponent: MenuItemComponentType<DarkModeMenuItemConfigData> = ({
-  itemKey,
-  itemConfig,
-  active,
-  selected,
-}) => {
+const MenuItemComponent: MenuItemComponentType<
+  DarkModeMenuItemConfigData,
+  TernaryDarkModeEnum
+> = ({ itemKey, itemConfig, active, selected }) => {
   const { label, Icon } = itemConfig[itemKey];
   const activeAndSelected = active && selected;
 

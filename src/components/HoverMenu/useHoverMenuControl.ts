@@ -3,10 +3,10 @@ import { useEventListener } from "usehooks-ts";
 
 import { TIMEOUT_DURATION } from "./consts";
 
-export const useHoverMenu = ({
+export const useHoverMenu = <MenuItemKeyType>({
   onSelect,
 }: {
-  onSelect: (itemKey: string) => void;
+  onSelect: (itemKey: MenuItemKeyType) => void;
 }) => {
   const [hovered, setHovered] = useState(false);
   const [hovering, setHovering] = useState(false);
@@ -57,7 +57,7 @@ export const useHoverMenu = ({
     }
   };
 
-  const getOnMenuItemButtonClick = (clickedKey: string) => () => {
+  const getOnMenuItemButtonClick = (clickedKey: MenuItemKeyType) => () => {
     clearTimeout(timeout);
     setSelecting(true);
     setHovered(false);
