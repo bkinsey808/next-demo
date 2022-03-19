@@ -30,7 +30,10 @@ export const useHoverMenu = <MenuItemKeyType>({
           setHovered(false);
           setSelecting(false);
         }, TIMEOUT_DURATION * 5);
-      } else if (!selecting) {
+      } else if (
+        !selecting &&
+        document.activeElement === menuButtonRef.current
+      ) {
         setHovered(true);
       }
     }

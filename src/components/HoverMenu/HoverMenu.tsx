@@ -46,15 +46,16 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
             onMouseLeave={withTimeoutClose}
             className="
               inline-flex 
-              justify-center 
-              w-full
-              px-4 py-2 
-              text-sm 
-              font-medium
-              text-white
-              bg-black 
+              w-full 
+              justify-center
               rounded-md 
-              bg-opacity-20 hover:bg-opacity-30                
+              bg-black 
+              bg-opacity-20 
+              px-4 py-2
+              text-sm 
+              font-medium 
+              text-white 
+              hover:bg-opacity-30                
               focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
             "
           >
@@ -75,18 +76,20 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
             onMouseEnter={withTimeoutOpen}
             onMouseLeave={withTimeoutClose}
             className="
-              absolute 
+              absolute
               right-0 
-              w-64 
+              z-10 
               mt-2 
+              w-64 
               origin-top-right 
-              bg-white divide-y 
+              divide-y 
               divide-gray-100 
               rounded-md 
+              bg-white 
               shadow-lg 
               ring-1 ring-black ring-opacity-5 
               focus:outline-none
-            "
+              "
           >
             <div className="px-1 py-1 ">
               {items.map((itemKey) => {
