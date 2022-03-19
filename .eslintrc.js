@@ -36,6 +36,15 @@ module.exports = {
     "no-unused-expressions": "error",
     yoda: "error",
   },
+  overrides: [
+    {
+      files: ["*.js"],
+      rules: {
+        // our js config files need to use require
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+  ],
   env: {
     jest: true,
   },

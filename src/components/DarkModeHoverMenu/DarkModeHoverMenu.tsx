@@ -15,7 +15,7 @@ const MenuButtonComponent: MenuButtonComponentType<TernaryDarkModeEnum> = ({
   activeKey,
 }) => {
   const MenuButtonIcon = ITEM_CONFIG[activeKey].Icon;
-  return <MenuButtonIcon className="w-5 h-5" />;
+  return <MenuButtonIcon className="h-5 w-5" />;
 };
 
 const MenuItemComponent: MenuItemComponentType<
@@ -28,12 +28,12 @@ const MenuItemComponent: MenuItemComponentType<
   return (
     <>
       <CheckCircleIcon
-        className={clsx("w-5 h-5 mr-2", {
+        className={clsx("mr-2 h-5 w-5", {
           visible: activeAndSelected,
           invisible: !activeAndSelected,
         })}
       />
-      <Icon className="w-5 h-5 mr-2" aria-hidden="true" />
+      <Icon className="mr-2 h-5 w-5" aria-hidden="true" />
       {label}
     </>
   );
@@ -53,6 +53,7 @@ export const DarkModeHoverMenu: FC = () => {
       MenuButtonComponent={MenuButtonComponent}
       MenuItemComponent={MenuItemComponent}
       onSelect={onSelect}
+      ariaLabel={"Select dark/light mode"}
     />
   );
 };

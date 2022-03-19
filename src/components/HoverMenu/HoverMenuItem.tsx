@@ -40,11 +40,11 @@ export const HoverMenuItem = <
             `
               group 
               flex 
-              rounded-md 
-              items-center 
               w-full 
-              text-sm 
-              px-2 py-2 
+              items-center 
+              rounded-md 
+              px-2 
+              py-2 text-sm 
               focus:outline-none focus-visible:outline-none
             `,
             {

@@ -16,6 +16,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
   MenuButtonComponent,
   MenuItemComponent,
   onSelect,
+  ariaLabel,
 }: {
   activeKey: MenuItemKeyType;
   items: MenuItemKeyType[];
@@ -23,6 +24,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
   MenuButtonComponent: MenuButtonComponentType<MenuItemKeyType>;
   MenuItemComponent: MenuItemComponentType<MenuItemConfigData, MenuItemKeyType>;
   onSelect: (key: MenuItemKeyType) => void;
+  ariaLabel: string;
 }) => {
   const {
     withTimeoutOpen,
@@ -39,6 +41,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
       <Menu as="div" className="relative inline-block text-left">
         <div onMouseDown={onMouseDown}>
           <Menu.Button
+            aria-label={ariaLabel}
             as="button"
             ref={menuButtonRef}
             onFocus={onFocus}

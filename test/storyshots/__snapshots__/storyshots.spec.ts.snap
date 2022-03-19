@@ -28,6 +28,18 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
 <div
   className="container"
 >
+  <div
+    className="flex justify-center space-x-2"
+  >
+    <button
+      className="inline-block rounded bg-blue-600 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg"
+      data-mdb-ripple="true"
+      data-mdb-ripple-color="light"
+      type="button"
+    >
+      Button
+    </button>
+  </div>
   <h1
     className=" text-3xl font-bold  text-colorPrimary  underline "
   >
@@ -45,6 +57,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
         <button
           aria-expanded={false}
           aria-haspopup={true}
+          aria-label="Select dark/light mode"
           className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
           id="headlessui-menu-button-1"
           onClick={[Function]}
@@ -57,7 +70,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="w-5 h-5"
+            className="h-5 w-5"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
