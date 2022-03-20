@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components/Hello World 2 Hello World 2 1`] = `
+exports[`Storyshots Components/Hello World/Hello World 2 Hello World 2 1`] = `
 <h1
   className=" text-3xl font-bold  text-colorPrimary  underline "
 >
@@ -8,7 +8,7 @@ exports[`Storyshots Components/Hello World 2 Hello World 2 1`] = `
 </h1>
 `;
 
-exports[`Storyshots Components/Hello World 2 Hello World 3 1`] = `
+exports[`Storyshots Components/Hello World/Hello World 2 Hello World 3 1`] = `
 <h1
   className=" text-3xl font-bold  text-colorPrimary  underline "
 >
@@ -16,7 +16,7 @@ exports[`Storyshots Components/Hello World 2 Hello World 3 1`] = `
 </h1>
 `;
 
-exports[`Storyshots Components/Hello World Hello World 1`] = `
+exports[`Storyshots Components/Hello World/Hello World Hello World 1`] = `
 <h1
   className=" text-3xl font-bold  text-colorPrimary  underline "
 >
