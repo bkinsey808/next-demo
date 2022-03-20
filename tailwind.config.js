@@ -1,13 +1,22 @@
 const DESIGN_TOKENS = require("./src/theme/designTokens");
 
+/** If true, tailwind will use css custom properties (unofficially known as css variables).
+ *  This is easier for browser debugging and tracing,
+ *  but breaks vscode tailwind extension showing the color in box next to the class in code editor. */
+const USE_CSS_CUSTOM_PROPERTIES = true;
+
 /** Convert color design tokens to tailwind colors. Don't need to manually iterate.
- *  Contrast with @see https://levelup.gitconnected.com/tailwindcss-with-css-variables-513abe2e9a5 */
+ *  @see https://levelup.gitconnected.com/tailwindcss-with-css-variables-513abe2e9a5 */
 const colors = Object.keys(DESIGN_TOKENS)
   .filter((key) => key.startsWith("color"))
   .reduce(
     (obj, key) => ({
       ...obj,
-      [key]: DESIGN_TOKENS[key],
+      [key]: USE_CSS_CUSTOM_PROPERTIES
+        ? // easier to debug and trace with css variables
+          `var(--${key})`
+        : // can see color square in code editor
+          DESIGN_TOKENS[key],
     }),
     {}
   );
