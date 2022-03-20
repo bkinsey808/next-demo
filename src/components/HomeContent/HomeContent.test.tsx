@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
 
-import HomeContent from "./HomeContent";
+import { HomeContent } from "./HomeContent";
 
 describe("HomeContent", () => {
   it("renders a heading", () => {
