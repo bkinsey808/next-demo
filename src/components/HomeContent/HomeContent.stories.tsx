@@ -1,4 +1,4 @@
-import HomeContent from "./HomeContent";
+import { HomeContent } from "./HomeContent";
 
 export default {
   title: "Pages/Home",

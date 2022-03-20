@@ -1,6 +1,7 @@
 const DESIGN_TOKENS = require("./src/theme/designTokens");
 
-// convert color design tokens to tailwind colors
+/** Convert color design tokens to tailwind colors. Don't need to manually iterate.
+ *  Contrast with @see https://levelup.gitconnected.com/tailwindcss-with-css-variables-513abe2e9a5 */
 const colors = Object.keys(DESIGN_TOKENS)
   .filter((key) => key.startsWith("color"))
   .reduce(
