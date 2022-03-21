@@ -4,4 +4,8 @@ export default {
   component: HoverMenuSimpleExampleComponent,
 };
 
-export const HoverMenuSimpleMenu = () => <HoverMenuSimpleMenu />;
+export const HoverMenuSimpleExample = () => (
+  <div className="w-64 text-right">
+    <HoverMenuSimpleExampleComponent />
+  </div>
+);

@@ -4,4 +4,8 @@ export default {
   component: DarkModeHoverMenuComponent,
 };
 
-export const DarkModeHoverMenu = () => <DarkModeHoverMenu />;
+export const DarkModeHoverMenu = () => (
+  <div className="w-64 text-right">
+    <DarkModeHoverMenuComponent />
+  </div>
+);

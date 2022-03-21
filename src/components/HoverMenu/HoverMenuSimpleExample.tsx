@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 
 import { HoverMenu } from "./HoverMenu";
 import { MenuItemConfig } from "./types";
@@ -32,25 +32,21 @@ export const ITEM_CONFIG: MenuItemConfig<ConfigData, OptionEnum> = {
 } as const;
 
 export const HoverMenuSimpleExample: FC = () => {
+  const [activeColor, setActiveColor] = useState<OptionEnum>(OptionEnum.GREEN);
+
   return (
     <HoverMenu<ConfigData, OptionEnum>
-      activeKey={OptionEnum.RED}
+      activeKey={activeColor}
       items={ITEMS}
       itemConfig={ITEM_CONFIG}
-      MenuButtonComponent={({ activeKey }) => {
-        return <div>{activeKey}</div>;
-      }}
-      MenuItemComponent={({ itemKey, itemConfig, active, selected }) => {
-        const { label } = itemConfig[itemKey];
-        const activeAndSelected = active && selected;
-
-        return (
-          <div>
-            {label}: {activeAndSelected}
-          </div>
-        );
-      }}
-      ariaLabel={"Select "}
+      onSelect={(key) => setActiveColor(key)}
+      ariaLabel={"Select Color"}
+      MenuButtonComponent={({ activeKey }) => <div>{activeKey}</div>}
+      MenuItemComponent={({ itemKey, itemConfig, active, selected }) => (
+        <div>
+          {itemConfig[itemKey]}: {JSON.stringify(active && selected)}
+        </div>
+      )}
     />
   );
 };
