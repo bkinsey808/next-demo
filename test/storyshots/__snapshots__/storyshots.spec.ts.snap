@@ -1,5 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Components/Dark Mode Hover Menu/Dark Mode Hover Menu Dark Mode Hover Menu 1`] = `
+<div
+  className="w-64 text-right"
+>
+  <div
+    className="relative inline-block text-left"
+  >
+    <div
+      onMouseDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        aria-label="Select dark/light mode"
+        className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+        id="headlessui-menu-button-1"
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          className="h-5 w-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/Hello World/Hello World 2 Hello World 2 1`] = `
 <h1
   className=" text-3xl font-bold  text-colorPrimary  underline "
@@ -24,6 +67,39 @@ exports[`Storyshots Components/Hello World/Hello World Hello World 1`] = `
 </h1>
 `;
 
+exports[`Storyshots Components/Hover Menu/Hover Menu Simple Example Hover Menu Simple Example 1`] = `
+<div
+  className="w-64 text-right"
+>
+  <div
+    className="relative inline-block text-left"
+  >
+    <div
+      onMouseDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        aria-label="Select Color"
+        className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+        id="headlessui-menu-button-4"
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
+      >
+        <div>
+          Green
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Pages/Home Home Page 1`] = `
 <div
   className="container"
@@ -42,7 +118,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
           aria-haspopup={true}
           aria-label="Select dark/light mode"
           className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
-          id="headlessui-menu-button-1"
+          id="headlessui-menu-button-2"
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -77,9 +153,9 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup={true}
-        aria-label="Select "
+        aria-label="Select Color"
         className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
-        id="headlessui-menu-button-2"
+        id="headlessui-menu-button-3"
         onClick={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -89,7 +165,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
         type="button"
       >
         <div>
-          red
+          Green
         </div>
       </button>
     </div>
