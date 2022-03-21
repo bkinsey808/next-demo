@@ -27,7 +27,7 @@
     "test:visual": "echo \"Running visual tests... \" && cross-env VISUAL=true playwright test",
     "test:visual:update": "echo \"Running visual tests... \" && cross-env VISUAL=true playwright test --update-snapshots",
     "check-circular-deps": "echo \"Checking for Circular dependencies... \" && madge --circular --extensions ts ./",
-    "prepare": "husky install",
+    "prepare": "husky install && playwright install-deps",
     "commit": "cz"
   },
   "config": {

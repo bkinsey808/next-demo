@@ -28,11 +28,6 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
 <div
   className="container"
 >
-  <h1
-    className=" text-3xl font-bold  text-colorPrimary  underline "
-  >
-    Hello world!!
-  </h1>
   <div
     className="w-64 text-right"
   >
@@ -73,6 +68,37 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
       </div>
     </div>
   </div>
+  <div
+    className="relative inline-block text-left"
+  >
+    <div
+      onMouseDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        aria-label="Select "
+        className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+        id="headlessui-menu-button-2"
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
+      >
+        <div>
+          red
+        </div>
+      </button>
+    </div>
+  </div>
+  <h1
+    className=" text-3xl font-bold  text-colorPrimary  underline "
+  >
+    Hello world!!
+  </h1>
   <main
     className="main"
   >
