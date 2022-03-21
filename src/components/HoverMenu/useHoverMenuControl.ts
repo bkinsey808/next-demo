@@ -6,7 +6,7 @@ import { TIMEOUT_DURATION } from "./consts";
 export const useHoverMenu = <MenuItemKeyType>({
   onSelect,
 }: {
-  onSelect: (itemKey: MenuItemKeyType) => void;
+  onSelect?: (itemKey: MenuItemKeyType) => void;
 }) => {
   const [hovered, setHovered] = useState(false);
   const [hovering, setHovering] = useState(false);

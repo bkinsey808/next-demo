@@ -4,6 +4,7 @@ import { FC } from "react";
 
 import { DarkModeHoverMenu } from "../DarkModeHoverMenu";
 import { HelloWorld } from "../HelloWorld";
+import { HoverMenuSimpleExample } from "../HoverMenu/HoverMenuSimpleExample";
 import styles from "./HomeContent.module.css";
 
 export const HomeContent: FC = () => {
@@ -15,8 +16,13 @@ export const HomeContent: FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <div className="w-64 text-right">
+        <DarkModeHoverMenu />
+      </div>
+
+      <HoverMenuSimpleExample />
+
       <HelloWorld />
-      <DarkModeHoverMenu />
 
       <main className={styles.main}>
         <h1 className={styles.title}>

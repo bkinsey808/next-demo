@@ -19,6 +19,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/theme/designTokens.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/theme/designTokens.js", "src/components/DarkModeHoverMenu/DarkModeHoverMenu.stories.tsx.notworking", "src/components/HoverMenu/HoverMenuSimpleExample.stories.tsx.notworking"],
   "exclude": ["node_modules"]
 }

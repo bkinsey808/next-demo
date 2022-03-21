@@ -1,0 +1,7 @@
+import { DarkModeHoverMenu as DarkModeHoverMenuComponent } from "./DarkModeHoverMenu";
+
+export default {
+  component: DarkModeHoverMenuComponent,
+};
+
+export const DarkModeHoverMenu = () => <DarkModeHoverMenu />;

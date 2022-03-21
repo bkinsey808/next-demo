@@ -1,0 +1,7 @@
+import { HoverMenuSimpleExample as HoverMenuSimpleExampleComponent } from "./HoverMenuSimpleExample";
+
+export default {
+  component: HoverMenuSimpleExampleComponent,
+};
+
+export const HoverMenuSimpleMenu = () => <HoverMenuSimpleMenu />;
