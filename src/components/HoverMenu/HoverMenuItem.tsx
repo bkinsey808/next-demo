@@ -1,8 +1,8 @@
 import { Menu } from "@headlessui/react";
 import clsx from "clsx";
-import { useEffect, useRef } from "react";
 
 import { MenuItemComponentType, MenuItemConfig } from "./types";
+import { useHoverMenuItem } from "./useHoverMenuItem";
 
 export const HoverMenuItem = <
   MenuItemConfigData,
@@ -20,15 +20,10 @@ export const HoverMenuItem = <
   getOnMenuItemButtonClick: (key: MenuItemKeyType) => () => void;
   MenuItemComponent: MenuItemComponentType<MenuItemConfigData, MenuItemKeyType>;
 }) => {
-  const activeAndSelected = activeKey === itemKey;
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (activeAndSelected) {
-      buttonRef.current?.focus();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { buttonRef, selected } = useHoverMenuItem<MenuItemKeyType>({
+    activeKey,
+    itemKey,
+  });
 
   return (
     <Menu.Item key={itemKey}>
@@ -57,7 +52,7 @@ export const HoverMenuItem = <
             itemKey={itemKey}
             itemConfig={itemConfig}
             active={active}
-            selected={activeAndSelected}
+            selected={selected}
           />
         </button>
       )}
