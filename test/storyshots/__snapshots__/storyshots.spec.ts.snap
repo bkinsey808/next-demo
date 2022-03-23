@@ -7,6 +7,9 @@ exports[`Storyshots Components/Dark Mode Hover Menu/Dark Mode Hover Menu Dark Mo
   <div
     className="relative inline-block text-left"
   >
+    Show: 
+    false
+    <br />
     <div
       onMouseDown={[Function]}
     >
@@ -74,6 +77,9 @@ exports[`Storyshots Components/Hover Menu/Hover Menu Simple Example Hover Menu S
   <div
     className="relative inline-block text-left"
   >
+    Show: 
+    false
+    <br />
     <div
       onMouseDown={[Function]}
     >
@@ -110,6 +116,9 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
     <div
       className="relative inline-block text-left"
     >
+      Show: 
+      false
+      <br />
       <div
         onMouseDown={[Function]}
       >
@@ -145,29 +154,36 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
     </div>
   </div>
   <div
-    className="relative inline-block text-left"
+    className="w-64 text-right"
   >
     <div
-      onMouseDown={[Function]}
+      className="relative inline-block text-left"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup={true}
-        aria-label="Select Color"
-        className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
-        id="headlessui-menu-button-3"
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        type="button"
+      Show: 
+      false
+      <br />
+      <div
+        onMouseDown={[Function]}
       >
-        <div>
-          Green
-        </div>
-      </button>
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          aria-label="Select Color"
+          className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+          id="headlessui-menu-button-3"
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          type="button"
+        >
+          <div>
+            Green
+          </div>
+        </button>
+      </div>
     </div>
   </div>
   <h1

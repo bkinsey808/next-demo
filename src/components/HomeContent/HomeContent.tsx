@@ -20,7 +20,9 @@ export const HomeContent: FC = () => {
         <DarkModeHoverMenu />
       </div>
 
-      <HoverMenuSimpleExample />
+      <div className="w-64 text-right">
+        <HoverMenuSimpleExample />
+      </div>
 
       <HelloWorld />
 

@@ -7,7 +7,7 @@ import {
   MenuItemComponentType,
   MenuItemConfig,
 } from "./types";
-import { useHoverMenu } from "./useHoverMenuControl";
+import { useHoverMenu } from "./useHoverMenu";
 
 export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
   items,
@@ -38,6 +38,8 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
 
   return (
     <Menu as="div" className="relative inline-block text-left">
+      Show: {JSON.stringify(show)}
+      <br />
       <div onMouseDown={onMouseDown}>
         <Menu.Button
           aria-label={ariaLabel}

@@ -13,6 +13,9 @@ export const useHoverMenu = <MenuItemKeyType>({
   /** is control in a hovering state? */
   const hoveringRef = useRef(false);
 
+  /** recent mouse enter? */
+  const [mouseEntering, setMouseEntering] = useState(false);
+
   /** was control recent focused? */
   const [focusing, setFocusing] = useState(false);
 
@@ -46,13 +49,6 @@ export const useHoverMenu = <MenuItemKeyType>({
     }
   });
 
-  useEventListener("mousedown", (event) => {
-    if (hoveringRef.current || event.target === menuButtonRef.current) {
-      return;
-    }
-    setShow(false);
-  });
-
   const setHovering = (value: boolean) => {
     hoveringRef.current = value;
   };
@@ -62,6 +58,10 @@ export const useHoverMenu = <MenuItemKeyType>({
     if (!show) {
       setShow(true);
     }
+    setMouseEntering(true);
+    setTimeout(() => {
+      setMouseEntering(false);
+    }, TIMEOUT_DURATION);
   };
 
   const onMouseLeave = () => {
@@ -76,7 +76,9 @@ export const useHoverMenu = <MenuItemKeyType>({
   };
 
   const onMouseDown: MouseEventHandler<HTMLDivElement> = () => {
-    setShow(!show);
+    if (!focusing && !mouseEntering) {
+      setShow(!show);
+    }
   };
 
   const onFocus = () => {
@@ -91,6 +93,7 @@ export const useHoverMenu = <MenuItemKeyType>({
   };
 
   const getOnMenuItemButtonClick = (clickedKey: MenuItemKeyType) => () => {
+    console.log("click");
     setSelecting(true);
     setTimeout(() => {
       setSelecting(false);

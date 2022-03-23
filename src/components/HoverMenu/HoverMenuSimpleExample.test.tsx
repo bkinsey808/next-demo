@@ -1,21 +1,26 @@
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, within } from "@testing-library/react";
 
 import { HoverMenuSimpleExample } from "./HoverMenuSimpleExample";
 
 describe("HoverMenuSimpleExample", () => {
   it("renders color", async () => {
-    const { getByText } = render(<HoverMenuSimpleExample />);
+    const { getByLabelText, getByText, asFragment } = render(
+      <HoverMenuSimpleExample />
+    );
+    expect(asFragment()).toMatchSnapshot();
 
-    const menuButton = getByText(/Green/i);
-
+    const menuButton = await getByLabelText(/select color/i);
     expect(menuButton).toBeInTheDocument();
 
-    fireEvent(
-      menuButton,
-      new MouseEvent("click", {
-        bubbles: true,
-        cancelable: true,
-      })
-    );
+    // click doesn't work because of hover menu implementation
+    fireEvent.mouseDown(menuButton);
+
+    const redButton = await getByText(/Red/i);
+    fireEvent.click(redButton);
+    const { getByText: menuButtonGetByText } = within(menuButton);
+
+    // Confirm color was selected. Will throw error if not found.
+    menuButtonGetByText(/Red/i);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
