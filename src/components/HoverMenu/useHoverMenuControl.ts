@@ -8,93 +8,100 @@ export const useHoverMenu = <MenuItemKeyType>({
 }: {
   onSelect?: (itemKey: MenuItemKeyType) => void;
 }) => {
-  const [hovered, setHovered] = useState(false);
-  const [hovering, setHovering] = useState(false);
-  const [selecting, setSelecting] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
-  const keyupHandler = (event: WindowEventMap["keyup"]) => {
+  /** is control in a hovering state? */
+  const hoveringRef = useRef(false);
+
+  /** was control recent focused? */
+  const [focusing, setFocusing] = useState(false);
+
+  /** was control recently tabbed into? */
+  const [tabbing, setTabbing] = useState(false);
+
+  /** was a selection recently made on the control? */
+  const [selecting, setSelecting] = useState(false);
+
+  /** is the control currently showing the menu? */
+  const [show, setShow] = useState(false);
+
+  useEventListener("keyup", (event) => {
     if (event.key === "Escape") {
-      setHovered(false);
-      setSelecting(true);
+      setShow(false);
+    }
+    if (
+      event.key === "Enter" &&
+      document.activeElement === menuButtonRef.current &&
+      !selecting
+    ) {
+      setShow(true);
+    }
+    if (event.key === "Tab" && show && !focusing) {
+      setShow(false);
+      setTabbing(true);
+      menuButtonRef.current?.focus();
       setTimeout(() => {
-        setSelecting(false);
-        setHovered(false);
+        setTabbing(false);
       }, TIMEOUT_DURATION);
     }
-    if (event.key === "Enter") {
-      if (hovered) {
-        setHovered(false);
-        setSelecting(true);
-        setTimeout(() => {
-          setHovered(false);
-          setSelecting(false);
-        }, TIMEOUT_DURATION * 5);
-      } else if (
-        !selecting &&
-        document.activeElement === menuButtonRef.current
-      ) {
-        setHovered(true);
-      }
-    }
-    if (event.key === "Tab" && hovered && !hovering) {
-      menuButtonRef.current?.focus();
-      setHovered(false);
-    }
-  };
+  });
 
-  useEventListener("keyup", keyupHandler);
-
-  let timeout: NodeJS.Timeout;
-
-  const withTimeoutOpen = () => {
-    if (selecting) {
+  useEventListener("mousedown", (event) => {
+    if (hoveringRef.current || event.target === menuButtonRef.current) {
       return;
     }
-    setHovered(true);
-    clearTimeout(timeout);
+    setShow(false);
+  });
+
+  const setHovering = (value: boolean) => {
+    hoveringRef.current = value;
   };
-  const withTimeoutClose = () => {
-    if (hovered) {
-      timeout = setTimeout(() => setHovered(false), TIMEOUT_DURATION);
+
+  const onMouseEnter = () => {
+    setHovering(true);
+    if (!show) {
+      setShow(true);
     }
+  };
+
+  const onMouseLeave = () => {
+    setHovering(false);
+    if (show) {
+      setTimeout(() => {
+        if (!hoveringRef.current) {
+          setShow(false);
+        }
+      }, TIMEOUT_DURATION);
+    }
+  };
+
+  const onMouseDown: MouseEventHandler<HTMLDivElement> = () => {
+    setShow(!show);
+  };
+
+  const onFocus = () => {
+    if (hoveringRef.current || selecting || tabbing) {
+      return;
+    }
+    setShow(true);
+    setFocusing(true);
+    setTimeout(() => {
+      setFocusing(false);
+    }, TIMEOUT_DURATION);
   };
 
   const getOnMenuItemButtonClick = (clickedKey: MenuItemKeyType) => () => {
-    clearTimeout(timeout);
     setSelecting(true);
-    setHovered(false);
     setTimeout(() => {
       setSelecting(false);
     }, TIMEOUT_DURATION);
     onSelect?.(clickedKey);
-  };
-
-  /** should we show the menu? */
-  const show = hovered && !selecting;
-
-  const onMouseDown: MouseEventHandler<HTMLDivElement> = () => {
-    setHovered(!hovered);
-    setSelecting(true);
-    setTimeout(() => {
-      setSelecting(false);
-    }, TIMEOUT_DURATION / 2);
-  };
-
-  const onFocus = () => {
-    if (selecting) {
-      return;
-    }
-    setHovered(true);
-    setHovering(true);
-    setTimeout(() => {
-      setHovering(false);
-    }, TIMEOUT_DURATION);
+    setShow(false);
   };
 
   return {
-    withTimeoutOpen,
-    withTimeoutClose,
+    onMouseEnter,
+    onMouseLeave,
     getOnMenuItemButtonClick,
     onMouseDown,
     onFocus,

@@ -27,8 +27,8 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
   ariaLabel: string;
 }) => {
   const {
-    withTimeoutOpen,
-    withTimeoutClose,
+    onMouseEnter,
+    onMouseLeave,
     show,
     onMouseDown,
     onFocus,
@@ -44,8 +44,8 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
           as="button"
           ref={menuButtonRef}
           onFocus={onFocus}
-          onMouseEnter={withTimeoutOpen}
-          onMouseLeave={withTimeoutClose}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
           className="
             inline-flex 
             w-full 
@@ -75,8 +75,8 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items
-          onMouseEnter={withTimeoutOpen}
-          onMouseLeave={withTimeoutClose}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
           className="
             absolute
             right-0 
