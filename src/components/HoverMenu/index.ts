@@ -1,4 +1,5 @@
 export { HoverMenu } from "./HoverMenu";
+export { HoverMenuSimpleExample } from "./HoverMenuSimpleExample";
 export type {
   MenuItemConfig,
   MenuButtonComponentType,

@@ -20,5 +20,7 @@
     "strings": true
   },
   "zenMode.fullScreen": false,
-  "zenMode.centerLayout": false
+  "zenMode.centerLayout": false,
+  // @see https://stackoverflow.com/questions/66614875/how-can-i-enable-tailwind-intellisense-outside-of-classname#66614989
+  "tailwindCSS.experimental.classRegex": ["cntl`([^`]*)"]
 }
