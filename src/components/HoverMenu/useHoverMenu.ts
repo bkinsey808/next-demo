@@ -6,6 +6,7 @@ import {
   useEffect,
   useCallback,
 } from "react";
+import { useMutationObserver } from "rooks";
 import { useEventListener } from "usehooks-ts";
 
 import { HoverMenuContext } from "./HoverMenuContext";
@@ -18,7 +19,12 @@ export const useHoverMenu = <MenuItemKeyType>({
 }) => {
   const { activeHoverMenu, setActiveHoverMenu } = useContext(HoverMenuContext);
 
+  const [menuButtonWidth, setMenuButtonWidth] = useState(0);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  useMutationObserver(menuButtonRef, (...args) => {
+    console.log(args);
+    setMenuButtonWidth(menuButtonRef.current?.offsetWidth ?? 0);
+  });
 
   /** is control in a hovering state? */
   const hoveringRef = useRef(false);
@@ -142,5 +148,6 @@ export const useHoverMenu = <MenuItemKeyType>({
     onFocus,
     isActive,
     menuButtonRef,
+    menuButtonWidth,
   };
 };
