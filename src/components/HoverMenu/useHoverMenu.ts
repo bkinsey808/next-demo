@@ -6,6 +6,7 @@ import {
   useEffect,
   useCallback,
 } from "react";
+import useResizeObserver from "use-resize-observer";
 import { useEventListener } from "usehooks-ts";
 
 import { HoverMenuContext } from "./HoverMenuContext";
@@ -19,6 +20,10 @@ export const useHoverMenu = <MenuItemKeyType>({
   const { activeHoverMenu, setActiveHoverMenu } = useContext(HoverMenuContext);
 
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const { width } = useResizeObserver<HTMLButtonElement>({
+    ref: menuButtonRef,
+    box: "border-box", // need to include padding
+  });
 
   /** is control in a hovering state? */
   const hoveringRef = useRef(false);
@@ -134,6 +139,8 @@ export const useHoverMenu = <MenuItemKeyType>({
     setActive(false);
   };
 
+  console.log(width);
+
   return {
     onMouseEnter,
     onMouseLeave,
@@ -142,5 +149,6 @@ export const useHoverMenu = <MenuItemKeyType>({
     onFocus,
     isActive,
     menuButtonRef,
+    width,
   };
 };

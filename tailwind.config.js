@@ -22,6 +22,8 @@ const colors = Object.keys(DESIGN_TOKENS)
   );
 
 module.exports = {
+  mode: "jit",
+  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/tw-elements/dist/js/**/*.js",

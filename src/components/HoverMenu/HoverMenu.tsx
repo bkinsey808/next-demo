@@ -34,6 +34,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
     onFocus,
     getOnMenuItemButtonClick,
     menuButtonRef,
+    width,
   } = useHoverMenu({ onSelect });
 
   return (
@@ -67,8 +68,8 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
       <Transition
         show={isActive}
         as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
+        enter="transition ease-out duration-1000"
+        enterFrom="transform opacity-0 scale-50"
         enterTo="transform opacity-100 scale-100"
         leave="transition ease-in duration-75"
         leaveFrom="transform opacity-100 scale-100"
@@ -77,21 +78,21 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
         <Menu.Items
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
-          className="
+          className={`
             absolute
-            left-0 
+            top-0 
             z-10 
-            mt-2 
             w-64 
-            origin-top-right 
+            origin-top-left 
             divide-y 
             divide-gray-100 
             rounded-md 
             bg-white 
-            shadow-lg 
-            ring-1 ring-black ring-opacity-5 
+            shadow-lg ring-1 ring-black 
+            ring-opacity-5
             focus:outline-none
-          "
+          `}
+          style={{ left: `${width}px` }}
         >
           <div className="px-1 py-1">
             {items.map((itemKey) => {

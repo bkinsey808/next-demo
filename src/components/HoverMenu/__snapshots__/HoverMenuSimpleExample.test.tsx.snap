@@ -46,7 +46,7 @@ exports[`HoverMenuSimpleExample renders color 2`] = `
     <div
       aria-activedescendant="headlessui-menu-item-4"
       aria-labelledby="headlessui-menu-button-1"
-      class="absolute left-0 z-10 mt-2 w-64 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-in duration-75 transform opacity-100 scale-100"
+      class="absolute top-0 z-10 w-64 origin-top-left divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-in duration-75 transform opacity-100 scale-100"
       id="headlessui-menu-items-3"
       role="menu"
       tabindex="0"

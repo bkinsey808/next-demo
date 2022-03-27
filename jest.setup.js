@@ -15,3 +15,13 @@ Object.defineProperty(window, "matchMedia", {
     dispatchEvent: jest.fn(),
   })),
 });
+
+// @see https://stackoverflow.com/questions/68679993/referenceerror-resizeobserver-is-not-defined#68680087
+jest.mock("use-resize-observer", () => ({
+  __esModule: true,
+  default: jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+  })),
+}));
