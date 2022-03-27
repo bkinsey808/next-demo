@@ -7,9 +7,6 @@ exports[`Storyshots Components/Dark Mode Hover Menu/Dark Mode Hover Menu Dark Mo
   <div
     className="relative inline-block text-left"
   >
-    Show: 
-    false
-    <br />
     <div
       onMouseDown={[Function]}
     >
@@ -77,9 +74,6 @@ exports[`Storyshots Components/Hover Menu/Hover Menu Simple Example Hover Menu S
   <div
     className="relative inline-block text-left"
   >
-    Show: 
-    false
-    <br />
     <div
       onMouseDown={[Function]}
     >
@@ -88,7 +82,7 @@ exports[`Storyshots Components/Hover Menu/Hover Menu Simple Example Hover Menu S
         aria-haspopup={true}
         aria-label="Select Color"
         className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
-        id="headlessui-menu-button-4"
+        id="headlessui-menu-button-8"
         onClick={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -111,14 +105,234 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
   className="container"
 >
   <div
+    className="flex"
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "relative",
+          "width": "initial",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2772%27%20height=%2716%27/%3e"
+          style={
+            Object {
+              "background": "none",
+              "border": 0,
+              "display": "block",
+              "height": "initial",
+              "margin": 0,
+              "maxWidth": "100%",
+              "opacity": 1,
+              "padding": 0,
+              "width": "initial",
+            }
+          }
+        />
+      </span>
+      <img
+        alt="Vercel Logo"
+        data-nimg="intrinsic"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style={
+          Object {
+            "border": "none",
+            "bottom": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": 0,
+            "left": 0,
+            "margin": "auto",
+            "maxHeight": "100%",
+            "maxWidth": "100%",
+            "minHeight": "100%",
+            "minWidth": "100%",
+            "objectFit": undefined,
+            "objectPosition": undefined,
+            "padding": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          }
+        }
+      />
+      <noscript>
+        <img
+          alt="Vercel Logo"
+          data-nimg="intrinsic"
+          decoding="async"
+          loading="lazy"
+          src="/vercel.svg"
+          style={
+            Object {
+              "border": "none",
+              "bottom": 0,
+              "boxSizing": "border-box",
+              "display": "block",
+              "height": 0,
+              "left": 0,
+              "margin": "auto",
+              "maxHeight": "100%",
+              "maxWidth": "100%",
+              "minHeight": "100%",
+              "minWidth": "100%",
+              "objectFit": undefined,
+              "objectPosition": undefined,
+              "padding": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+        />
+      </noscript>
+    </span>
+    <div>
+      <div
+        className="relative inline-block text-left"
+      >
+        <div
+          onMouseDown={[Function]}
+        >
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Select Color"
+            className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+            id="headlessui-menu-button-2"
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            type="button"
+          >
+            <div>
+              Green
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        className="relative inline-block text-left"
+      >
+        <div
+          onMouseDown={[Function]}
+        >
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Select Color"
+            className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+            id="headlessui-menu-button-3"
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            type="button"
+          >
+            <div>
+              Green
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        className="relative inline-block text-left"
+      >
+        <div
+          onMouseDown={[Function]}
+        >
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Select Color"
+            className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+            id="headlessui-menu-button-4"
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            type="button"
+          >
+            <div>
+              Green
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        className="relative inline-block text-left"
+      >
+        <div
+          onMouseDown={[Function]}
+        >
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Select Color"
+            className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+            id="headlessui-menu-button-5"
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            type="button"
+          >
+            <div>
+              Green
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
     className="w-64 text-right"
   >
     <div
       className="relative inline-block text-left"
     >
-      Show: 
-      false
-      <br />
       <div
         onMouseDown={[Function]}
       >
@@ -127,7 +341,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
           aria-haspopup={true}
           aria-label="Select dark/light mode"
           className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
-          id="headlessui-menu-button-2"
+          id="headlessui-menu-button-6"
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -159,9 +373,6 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
     <div
       className="relative inline-block text-left"
     >
-      Show: 
-      false
-      <br />
       <div
         onMouseDown={[Function]}
       >
@@ -170,7 +381,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
           aria-haspopup={true}
           aria-label="Select Color"
           className=" inline-flex  w-full  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
-          id="headlessui-menu-button-3"
+          id="headlessui-menu-button-7"
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}

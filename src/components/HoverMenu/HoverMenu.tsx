@@ -29,7 +29,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
   const {
     onMouseEnter,
     onMouseLeave,
-    show,
+    isActive,
     onMouseDown,
     onFocus,
     getOnMenuItemButtonClick,
@@ -38,8 +38,6 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
 
   return (
     <Menu as="div" className="relative inline-block text-left">
-      Show: {JSON.stringify(show)}
-      <br />
       <div onMouseDown={onMouseDown}>
         <Menu.Button
           aria-label={ariaLabel}
@@ -67,7 +65,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
         </Menu.Button>
       </div>
       <Transition
-        show={show}
+        show={isActive}
         as={Fragment}
         enter="transition ease-out duration-100"
         enterFrom="transform opacity-0 scale-95"
@@ -81,7 +79,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
           onMouseLeave={onMouseLeave}
           className="
             absolute
-            right-0 
+            left-0 
             z-10 
             mt-2 
             w-64 
@@ -95,7 +93,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
             focus:outline-none
           "
         >
-          <div className="px-1 py-1 ">
+          <div className="px-1 py-1">
             {items.map((itemKey) => {
               return (
                 <HoverMenuItem

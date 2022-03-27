@@ -1,6 +1,14 @@
-import { useState, MouseEventHandler, useRef } from "react";
+import {
+  useState,
+  MouseEventHandler,
+  useRef,
+  useContext,
+  useEffect,
+  useCallback,
+} from "react";
 import { useEventListener } from "usehooks-ts";
 
+import { HoverMenuContext } from "./HoverMenuContext";
 import { TIMEOUT_DURATION } from "./consts";
 
 export const useHoverMenu = <MenuItemKeyType>({
@@ -8,6 +16,8 @@ export const useHoverMenu = <MenuItemKeyType>({
 }: {
   onSelect?: (itemKey: MenuItemKeyType) => void;
 }) => {
+  const { activeHoverMenu, setActiveHoverMenu } = useContext(HoverMenuContext);
+
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   /** is control in a hovering state? */
@@ -28,19 +38,38 @@ export const useHoverMenu = <MenuItemKeyType>({
   /** is the control currently showing the menu? */
   const [show, setShow] = useState(false);
 
+  const setActive = useCallback(
+    (active: boolean) => {
+      if (active) {
+        setActiveHoverMenu(menuButtonRef.current);
+      }
+
+      setShow(active);
+    },
+    [setActiveHoverMenu, menuButtonRef, setShow]
+  );
+
+  useEffect(() => {
+    if (activeHoverMenu !== menuButtonRef.current) {
+      setActive(false);
+    }
+  }, [activeHoverMenu, setShow, setActive]);
+
+  const isActive = show;
+
   useEventListener("keyup", (event) => {
     if (event.key === "Escape") {
-      setShow(false);
+      setActive(false);
     }
     if (
       event.key === "Enter" &&
       document.activeElement === menuButtonRef.current &&
       !selecting
     ) {
-      setShow(true);
+      setActive(true);
     }
-    if (event.key === "Tab" && show && !focusing) {
-      setShow(false);
+    if (event.key === "Tab" && isActive && !focusing) {
+      setActive(false);
       setTabbing(true);
       menuButtonRef.current?.focus();
       setTimeout(() => {
@@ -53,10 +82,12 @@ export const useHoverMenu = <MenuItemKeyType>({
     hoveringRef.current = value;
   };
 
-  const onMouseEnter = () => {
+  const onMouseEnter: MouseEventHandler<
+    HTMLButtonElement | HTMLDivElement
+  > = () => {
     setHovering(true);
-    if (!show) {
-      setShow(true);
+    if (!isActive) {
+      setActive(true);
     }
     setMouseEntering(true);
     setTimeout(() => {
@@ -64,12 +95,14 @@ export const useHoverMenu = <MenuItemKeyType>({
     }, TIMEOUT_DURATION);
   };
 
-  const onMouseLeave = () => {
+  const onMouseLeave: MouseEventHandler<
+    HTMLButtonElement | HTMLDivElement
+  > = () => {
     setHovering(false);
-    if (show) {
+    if (isActive) {
       setTimeout(() => {
         if (!hoveringRef.current) {
-          setShow(false);
+          setActive(false);
         }
       }, TIMEOUT_DURATION);
     }
@@ -77,7 +110,7 @@ export const useHoverMenu = <MenuItemKeyType>({
 
   const onMouseDown: MouseEventHandler<HTMLDivElement> = () => {
     if (!focusing && !mouseEntering) {
-      setShow(!show);
+      setActive(!isActive);
     }
   };
 
@@ -85,7 +118,7 @@ export const useHoverMenu = <MenuItemKeyType>({
     if (hoveringRef.current || selecting || tabbing) {
       return;
     }
-    setShow(true);
+    setActive(true);
     setFocusing(true);
     setTimeout(() => {
       setFocusing(false);
@@ -93,13 +126,12 @@ export const useHoverMenu = <MenuItemKeyType>({
   };
 
   const getOnMenuItemButtonClick = (clickedKey: MenuItemKeyType) => () => {
-    console.log("click");
     setSelecting(true);
     setTimeout(() => {
       setSelecting(false);
     }, TIMEOUT_DURATION);
     onSelect?.(clickedKey);
-    setShow(false);
+    setActive(false);
   };
 
   return {
@@ -108,7 +140,7 @@ export const useHoverMenu = <MenuItemKeyType>({
     getOnMenuItemButtonClick,
     onMouseDown,
     onFocus,
-    show,
+    isActive,
     menuButtonRef,
   };
 };
