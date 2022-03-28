@@ -104,13 +104,13 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
           onClick={[Function]}
         >
           <div
-            className="h-1 w-6 my-1 rounded-full bg-black transition ease-in transform duration-300 opacity-50 group-hover:opacity-100"
+            className="my-1 h-1 w-6 transform rounded-full bg-black transition duration-300 ease-in opacity-50 group-hover:opacity-100"
           />
           <div
-            className="h-1 w-6 my-1 rounded-full bg-black transition ease-in transform duration-300 opacity-50 group-hover:opacity-100"
+            className="my-1 h-1 w-6 transform rounded-full bg-black transition duration-300 ease-in opacity-50 group-hover:opacity-100"
           />
           <div
-            className="h-1 w-6 my-1 rounded-full bg-black transition ease-in transform duration-300 opacity-50 group-hover:opacity-100"
+            className="my-1 h-1 w-6 transform rounded-full bg-black transition duration-300 ease-in opacity-50 group-hover:opacity-100"
           />
         </button>
         <span
