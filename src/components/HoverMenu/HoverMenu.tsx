@@ -1,6 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import cntl from "cntl";
-import { Fragment } from "react";
+import { FC, Fragment } from "react";
 
 import { HoverMenuItem } from "./HoverMenuItem";
 import {
@@ -15,6 +15,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
   itemConfig,
   activeKey,
   MenuButtonComponent,
+  MenuItemsComponent,
   MenuItemComponent,
   onSelect,
   ariaLabel,
@@ -23,6 +24,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
   items: MenuItemKeyType[];
   itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
   MenuButtonComponent: MenuButtonComponentType<MenuItemKeyType>;
+  MenuItemsComponent: FC;
   MenuItemComponent: MenuItemComponentType<MenuItemConfigData, MenuItemKeyType>;
   onSelect?: (key: MenuItemKeyType) => void;
   ariaLabel: string;
@@ -47,21 +49,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         onMouseDown={onMouseDown}
-        className="
-          justify-left
-          relative 
-          inline-flex
-          w-full
-          rounded-md 
-          bg-black 
-          bg-opacity-20 
-          px-4 py-2
-          text-sm 
-          font-medium 
-          text-white 
-          hover:bg-opacity-30                
-          focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
-        "
+        className="w-full"
       >
         <MenuButtonComponent activeKey={activeKey} />
       </Menu.Button>
@@ -76,26 +64,8 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
         leaveFrom={cntl`transform opacity-100 scale-100`}
         leaveTo={cntl`transform opacity-0 scale-95`}
       >
-        <Menu.Items
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          className="
-            absolute
-            left-0 
-            z-10 
-            mt-2 
-            w-64 
-            origin-top-right 
-            divide-y 
-            divide-gray-100 
-            rounded-md 
-            bg-white 
-            shadow-lg 
-            ring-1 ring-black ring-opacity-5 
-            focus:outline-none
-          "
-        >
-          <div className="px-1 py-1">
+        <Menu.Items onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+          <MenuItemsComponent>
             {items.map((itemKey) => {
               return (
                 <HoverMenuItem
@@ -108,7 +78,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
                 />
               );
             })}
-          </div>
+          </MenuItemsComponent>
         </Menu.Items>
       </Transition>
     </Menu>

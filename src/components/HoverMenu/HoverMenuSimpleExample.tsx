@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { FC, useState } from "react";
 
 import { HoverMenu } from "./HoverMenu";
@@ -42,11 +43,68 @@ export const HoverMenuSimpleExample: FC = () => {
       onSelect={(key) => setActiveColor(key)}
       ariaLabel={"Select Color"}
       MenuButtonComponent={({ activeKey }) => (
-        <div>{ITEM_CONFIG[activeKey].label}</div>
+        <div
+          className="
+            justify-left
+            relative 
+            inline-flex
+            w-full
+            rounded-md 
+            bg-black 
+            bg-opacity-20 
+            px-4 py-2
+            text-sm 
+            font-medium 
+            text-white 
+            hover:bg-opacity-30                
+            focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
+          "
+        >
+          {ITEM_CONFIG[activeKey].label}
+        </div>
+      )}
+      MenuItemsComponent={({ children }) => (
+        <div
+          className="
+            absolute left-0
+            z-10 mt-2
+            flex
+            w-64 
+            origin-top-right 
+            flex-col 
+            divide-y 
+            divide-gray-100 
+            rounded-md 
+            bg-white 
+            px-1 
+            py-1 
+            shadow-lg 
+            ring-1 ring-black ring-opacity-5 
+            focus:outline-none          
+          "
+        >
+          {children}
+        </div>
       )}
       MenuItemComponent={({ itemKey, itemConfig, active, selected }) => (
-        <div>
-          {itemConfig[itemKey].label}: {JSON.stringify(active && selected)}
+        <div
+          className={clsx(
+            `
+            group 
+            flex 
+            w-full 
+            items-center 
+            rounded-md 
+            px-2 
+            py-2 text-sm 
+          `,
+            {
+              "bg-violet-500 text-white": active,
+              "text-gray-900": !active,
+            }
+          )}
+        >
+          {itemConfig[itemKey].label}: {JSON.stringify({ active, selected })}
         </div>
       )}
     />

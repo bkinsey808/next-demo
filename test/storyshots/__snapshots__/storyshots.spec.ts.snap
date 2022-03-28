@@ -8,7 +8,7 @@ exports[`Storyshots Components/Dark Mode Hover Menu/Dark Mode Hover Menu Dark Mo
     aria-expanded={false}
     aria-haspopup={true}
     aria-label="Select dark/light mode"
-    className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+    className="w-full"
     id="headlessui-menu-button-1"
     onClick={[Function]}
     onFocus={[Function]}
@@ -21,7 +21,7 @@ exports[`Storyshots Components/Dark Mode Hover Menu/Dark Mode Hover Menu Dark Mo
   >
     <svg
       aria-hidden="true"
-      className="h-5 w-5"
+      className=" justify-left relative inline-flex  h-7 rounded-md  bg-black  bg-opacity-20 px-4 py-2  text-left  text-sm  font-medium                 text-white hover:bg-opacity-30 focus-visible:ring-2         focus-visible:ring-white focus-visible:ring-opacity-75 "
       fill="currentColor"
       viewBox="0 0 20 20"
       xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ exports[`Storyshots Components/Hover Menu/Hover Menu Simple Example Hover Menu S
     aria-expanded={false}
     aria-haspopup={true}
     aria-label="Select Color"
-    className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+    className="w-full"
     id="headlessui-menu-button-8"
     onClick={[Function]}
     onFocus={[Function]}
@@ -79,7 +79,9 @@ exports[`Storyshots Components/Hover Menu/Hover Menu Simple Example Hover Menu S
     onMouseLeave={[Function]}
     type="button"
   >
-    <div>
+    <div
+      className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+    >
       Green
     </div>
   </button>
@@ -240,7 +242,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Select Color"
-              className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+              className="w-full"
               id="headlessui-menu-button-2"
               onClick={[Function]}
               onFocus={[Function]}
@@ -251,7 +253,9 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
               onMouseLeave={[Function]}
               type="button"
             >
-              <div>
+              <div
+                className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+              >
                 Green
               </div>
             </button>
@@ -263,7 +267,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Select Color"
-              className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+              className="w-full"
               id="headlessui-menu-button-3"
               onClick={[Function]}
               onFocus={[Function]}
@@ -274,7 +278,9 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
               onMouseLeave={[Function]}
               type="button"
             >
-              <div>
+              <div
+                className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+              >
                 Green
               </div>
             </button>
@@ -286,7 +292,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Select Color"
-              className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+              className="w-full"
               id="headlessui-menu-button-4"
               onClick={[Function]}
               onFocus={[Function]}
@@ -297,7 +303,9 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
               onMouseLeave={[Function]}
               type="button"
             >
-              <div>
+              <div
+                className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+              >
                 Green
               </div>
             </button>
@@ -309,7 +317,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Select Color"
-              className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+              className="w-full"
               id="headlessui-menu-button-5"
               onClick={[Function]}
               onFocus={[Function]}
@@ -320,7 +328,9 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
               onMouseLeave={[Function]}
               type="button"
             >
-              <div>
+              <div
+                className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+              >
                 Green
               </div>
             </button>
@@ -336,7 +346,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
       aria-expanded={false}
       aria-haspopup={true}
       aria-label="Select dark/light mode"
-      className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+      className="w-full"
       id="headlessui-menu-button-6"
       onClick={[Function]}
       onFocus={[Function]}
@@ -349,7 +359,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
     >
       <svg
         aria-hidden="true"
-        className="h-5 w-5"
+        className=" justify-left relative inline-flex  h-7 rounded-md  bg-black  bg-opacity-20 px-4 py-2  text-left  text-sm  font-medium                 text-white hover:bg-opacity-30 focus-visible:ring-2         focus-visible:ring-white focus-visible:ring-opacity-75 "
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -369,7 +379,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
       aria-expanded={false}
       aria-haspopup={true}
       aria-label="Select Color"
-      className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+      className="w-full"
       id="headlessui-menu-button-7"
       onClick={[Function]}
       onFocus={[Function]}
@@ -380,7 +390,9 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
       onMouseLeave={[Function]}
       type="button"
     >
-      <div>
+      <div
+        className=" justify-left relative  inline-flex w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+      >
         Green
       </div>
     </button>

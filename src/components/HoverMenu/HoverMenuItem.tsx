@@ -1,5 +1,4 @@
 import { Menu } from "@headlessui/react";
-import clsx from "clsx";
 
 import { MenuItemComponentType, MenuItemConfig } from "./types";
 import { useHoverMenuItem } from "./useHoverMenuItem";
@@ -30,23 +29,8 @@ export const HoverMenuItem = <
       {({ active }) => (
         <button
           ref={buttonRef}
+          className="focus:outline-none focus-visible:outline-none"
           onClick={getOnMenuItemButtonClick(itemKey)}
-          className={clsx(
-            `
-              group 
-              flex 
-              w-full 
-              items-center 
-              rounded-md 
-              px-2 
-              py-2 text-sm 
-              focus:outline-none focus-visible:outline-none
-            `,
-            {
-              "bg-violet-500 text-white": active,
-              "text-gray-900": !active,
-            }
-          )}
         >
           <MenuItemComponent
             itemKey={itemKey}
