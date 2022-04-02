@@ -1,4 +1,6 @@
+import { Transition } from "@headlessui/react";
 import clsx from "clsx";
+import cntl from "cntl";
 import { FC, useState } from "react";
 
 import { HoverMenu } from "./HoverMenu";
@@ -46,41 +48,57 @@ export const HoverMenuSimpleExample: FC = () => {
         <div
           className="
             justify-left
-            relative 
+            relative
             inline-flex
             w-full
-            rounded-md 
-            bg-black 
-            bg-opacity-20 
+            rounded-md
+            bg-black
+            bg-opacity-20
             px-4 py-2
-            text-sm 
-            font-medium 
-            text-white 
-            hover:bg-opacity-30                
+            text-sm
+            font-medium
+            text-white
+            hover:bg-opacity-30
             focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
           "
         >
           {ITEM_CONFIG[activeKey].label}
         </div>
       )}
+      TransitionComponent={({ children, isActive }) => (
+        <Transition
+          show={isActive}
+          as="div"
+          className={cntl`absolute`}
+          enter={cntl`transition ease-out duration-100`}
+          enterFrom={cntl`transform opacity-0 scale-95`}
+          enterTo={cntl`transform opacity-100 scale-100`}
+          leave={cntl`transition ease-in duration-75`}
+          leaveFrom={cntl`transform opacity-100 scale-100`}
+          leaveTo={cntl`transform opacity-0 scale-95`}
+        >
+          {children}
+        </Transition>
+      )}
       MenuItemsComponent={({ children }) => (
         <div
+          // mt-2
           className="
             absolute left-0
-            z-10 mt-2
+            z-10 
             flex
-            w-64 
-            origin-top-right 
-            flex-col 
-            divide-y 
-            divide-gray-100 
-            rounded-md 
-            bg-white 
-            px-1 
-            py-1 
-            shadow-lg 
-            ring-1 ring-black ring-opacity-5 
-            focus:outline-none          
+            w-64
+            origin-top-right
+            flex-col
+            divide-y
+            divide-gray-100
+            rounded-md
+            bg-white
+            px-1
+            py-1
+            shadow-lg
+            ring-1 ring-black ring-opacity-5
+            focus:outline-none
           "
         >
           {children}
@@ -90,14 +108,14 @@ export const HoverMenuSimpleExample: FC = () => {
         <div
           className={clsx(
             `
-            group 
-            flex 
-            w-full 
-            items-center 
-            rounded-md 
-            px-2 
-            py-2 text-sm 
-          `,
+              group
+              flex
+              w-full
+              items-center
+              rounded-md
+              px-2
+              py-2 text-sm
+            `,
             {
               "bg-violet-500 text-white": active,
               "text-gray-900": !active,

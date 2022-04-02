@@ -12,11 +12,10 @@ export const NavBar: FC = () => {
     <header className="flex">
       <nav ref={navRef} className="flex w-full flex-col">
         <div className="flex">
-          <AnimatedHamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
           <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </div>
         <div className="inline-flex flex-row justify-start">
-          <div className="flex flex-col">
+          <div className="flex flex-row">
             <div className="flex flex-row flex-wrap justify-start">
               <HoverMenuSimpleExample />
             </div>
@@ -31,6 +30,7 @@ export const NavBar: FC = () => {
             </div>
           </div>
         </div>
+        <AnimatedHamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       </nav>
     </header>
   );

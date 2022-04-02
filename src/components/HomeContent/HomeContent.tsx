@@ -6,6 +6,7 @@ import { DarkModeHoverMenu } from "../DarkModeHoverMenu";
 import { HelloWorld } from "../HelloWorld";
 import { HoverMenuSimpleExample } from "../HoverMenu/HoverMenuSimpleExample";
 import { NavBar } from "../NavBar";
+// import { NavBar } from "../NavBar";
 import styles from "./HomeContent.module.css";
 
 export const HomeContent: FC = () => {

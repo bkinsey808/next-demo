@@ -1,7 +1,7 @@
-import { Menu, Transition } from "@headlessui/react";
-import cntl from "cntl";
+import { Menu } from "@headlessui/react";
 import { FC, Fragment } from "react";
 
+import { DefaultTransitionComponent } from "./DefaultTransitionComponent";
 import { HoverMenuItem } from "./HoverMenuItem";
 import {
   MenuButtonComponentType,
@@ -10,25 +10,29 @@ import {
 } from "./types";
 import { useHoverMenu } from "./useHoverMenu";
 
+interface Props<MenuItemConfigData, MenuItemKeyType extends string> {
+  activeKey: MenuItemKeyType;
+  items: MenuItemKeyType[];
+  itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
+  MenuButtonComponent: MenuButtonComponentType<MenuItemKeyType>;
+  TransitionComponent: FC<{ isActive: boolean }>;
+  MenuItemsComponent: FC;
+  MenuItemComponent: MenuItemComponentType<MenuItemConfigData, MenuItemKeyType>;
+  onSelect?: (key: MenuItemKeyType) => void;
+  ariaLabel: string;
+}
+
 export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
   items,
   itemConfig,
   activeKey,
   MenuButtonComponent,
+  TransitionComponent = DefaultTransitionComponent,
   MenuItemsComponent,
   MenuItemComponent,
   onSelect,
   ariaLabel,
-}: {
-  activeKey: MenuItemKeyType;
-  items: MenuItemKeyType[];
-  itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
-  MenuButtonComponent: MenuButtonComponentType<MenuItemKeyType>;
-  MenuItemsComponent: FC;
-  MenuItemComponent: MenuItemComponentType<MenuItemConfigData, MenuItemKeyType>;
-  onSelect?: (key: MenuItemKeyType) => void;
-  ariaLabel: string;
-}) => {
+}: Props<MenuItemConfigData, MenuItemKeyType>) => {
   const {
     onMouseEnter,
     onMouseLeave,
@@ -53,17 +57,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
       >
         <MenuButtonComponent activeKey={activeKey} />
       </Menu.Button>
-      <Transition
-        show={isActive}
-        as={"div"}
-        className="absolute"
-        enter={cntl`transition ease-out duration-100`}
-        enterFrom={cntl`transform opacity-0 scale-95`}
-        enterTo={cntl`transform opacity-100 scale-100`}
-        leave={cntl`transition ease-in duration-75`}
-        leaveFrom={cntl`transform opacity-100 scale-100`}
-        leaveTo={cntl`transform opacity-0 scale-95`}
-      >
+      <TransitionComponent isActive={isActive}>
         <Menu.Items onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
           <MenuItemsComponent>
             {items.map((itemKey) => {
@@ -80,7 +74,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
             })}
           </MenuItemsComponent>
         </Menu.Items>
-      </Transition>
+      </TransitionComponent>
     </Menu>
   );
 };
