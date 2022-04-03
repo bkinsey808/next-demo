@@ -2,38 +2,118 @@
 
 exports[`HoverMenuSimpleExample renders color 1`] = `
 <DocumentFragment>
-  <button
-    aria-expanded="false"
-    aria-haspopup="true"
-    aria-label="Select Color"
-    class="w-full"
-    id="headlessui-menu-button-1"
-    type="button"
+  <div
+    class="relative inline-block"
   >
-    <div
-      class=" justify-left relative inline-flex w-full rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+    <button
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Select Color"
+      id="headlessui-menu-button-1"
+      type="button"
     >
-      Green
-    </div>
-  </button>
+      <div
+        class=" inline-flex  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+      >
+        Green
+      </div>
+    </button>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`HoverMenuSimpleExample renders color 2`] = `
 <DocumentFragment>
-  <button
-    aria-expanded="false"
-    aria-haspopup="true"
-    aria-label="Select Color"
-    class="w-full"
-    id="headlessui-menu-button-1"
-    type="button"
+  <div
+    class="relative inline-block"
   >
-    <div
-      class=" justify-left relative inline-flex w-full rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+    <button
+      aria-controls="headlessui-menu-items-3"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Select Color"
+      id="headlessui-menu-button-1"
+      type="button"
     >
-      Red
+      <div
+        class=" inline-flex  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+      >
+        Red
+      </div>
+    </button>
+    <div
+      aria-activedescendant="headlessui-menu-item-4"
+      aria-labelledby="headlessui-menu-button-1"
+      class="transition ease-in duration-75 transform opacity-100 scale-100"
+      id="headlessui-menu-items-3"
+      role="menu"
+      tabindex="0"
+    >
+      <div
+        class=" absolute left-0 z-10  flex w-64 origin-top-right flex-col divide-y divide-gray-100 rounded-md bg-white px-1 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none "
+      >
+        <button
+          class="focus:outline-none focus-visible:outline-none"
+          id="headlessui-menu-item-4"
+          role="menuitem"
+          tabindex="-1"
+        >
+          <div
+            class="
+              group
+              flex
+              w-full
+              items-center
+              rounded-md
+              px-2
+              py-2 text-sm
+             bg-violet-500 text-white"
+          >
+            Green: {"active":true,"selected":false}
+          </div>
+        </button>
+        <button
+          class="focus:outline-none focus-visible:outline-none"
+          id="headlessui-menu-item-5"
+          role="menuitem"
+          tabindex="-1"
+        >
+          <div
+            class="
+              group
+              flex
+              w-full
+              items-center
+              rounded-md
+              px-2
+              py-2 text-sm
+             text-gray-900"
+          >
+            Yellow: {"active":false,"selected":false}
+          </div>
+        </button>
+        <button
+          class="focus:outline-none focus-visible:outline-none"
+          id="headlessui-menu-item-6"
+          role="menuitem"
+          tabindex="-1"
+        >
+          <div
+            class="
+              group
+              flex
+              w-full
+              items-center
+              rounded-md
+              px-2
+              py-2 text-sm
+             text-gray-900"
+          >
+            Red: {"active":false,"selected":true}
+          </div>
+        </button>
+      </div>
     </div>
-  </button>
+  </div>
 </DocumentFragment>
 `;

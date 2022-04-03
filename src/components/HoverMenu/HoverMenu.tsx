@@ -14,8 +14,9 @@ interface Props<MenuItemConfigData, MenuItemKeyType extends string> {
   activeKey: MenuItemKeyType;
   items: MenuItemKeyType[];
   itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
+  WrapperComponent?: FC;
   MenuButtonComponent: MenuButtonComponentType<MenuItemKeyType>;
-  TransitionComponent: FC<{ isActive: boolean }>;
+  TransitionComponent?: FC<{ isActive: boolean }>;
   MenuItemsComponent: FC;
   MenuItemComponent: MenuItemComponentType<MenuItemConfigData, MenuItemKeyType>;
   onSelect?: (key: MenuItemKeyType) => void;
@@ -26,6 +27,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
   items,
   itemConfig,
   activeKey,
+  WrapperComponent = Fragment,
   MenuButtonComponent,
   TransitionComponent = DefaultTransitionComponent,
   MenuItemsComponent,
@@ -44,37 +46,38 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
   } = useHoverMenu({ onSelect });
 
   return (
-    <Menu as={Fragment}>
-      <Menu.Button
-        aria-label={ariaLabel}
-        as="button"
-        ref={menuButtonRef}
-        onFocus={onFocus}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        onMouseDown={onMouseDown}
-        className="w-full"
-      >
-        <MenuButtonComponent activeKey={activeKey} />
-      </Menu.Button>
-      <TransitionComponent isActive={isActive}>
-        <Menu.Items onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-          <MenuItemsComponent>
-            {items.map((itemKey) => {
-              return (
-                <HoverMenuItem
-                  key={itemKey}
-                  itemKey={itemKey}
-                  activeKey={activeKey}
-                  itemConfig={itemConfig}
-                  getOnMenuItemButtonClick={getOnMenuItemButtonClick}
-                  MenuItemComponent={MenuItemComponent}
-                />
-              );
-            })}
-          </MenuItemsComponent>
-        </Menu.Items>
-      </TransitionComponent>
-    </Menu>
+    <WrapperComponent>
+      <Menu as={Fragment}>
+        <Menu.Button
+          aria-label={ariaLabel}
+          as="button"
+          ref={menuButtonRef}
+          onFocus={onFocus}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onMouseDown={onMouseDown}
+        >
+          <MenuButtonComponent activeKey={activeKey} />
+        </Menu.Button>
+        <TransitionComponent isActive={isActive}>
+          <Menu.Items onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+            <MenuItemsComponent>
+              {items.map((itemKey) => {
+                return (
+                  <HoverMenuItem
+                    key={itemKey}
+                    itemKey={itemKey}
+                    activeKey={activeKey}
+                    itemConfig={itemConfig}
+                    getOnMenuItemButtonClick={getOnMenuItemButtonClick}
+                    MenuItemComponent={MenuItemComponent}
+                  />
+                );
+              })}
+            </MenuItemsComponent>
+          </Menu.Items>
+        </TransitionComponent>
+      </Menu>
+    </WrapperComponent>
   );
 };

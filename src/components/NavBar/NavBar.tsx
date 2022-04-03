@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FC, useRef, useState } from "react";
 
-import { HoverMenuSimpleExample } from "../HoverMenu";
+import { HoverMenuSimpleExample } from "../HoverMenu/HoverMenuSimpleExample";
 import { AnimatedHamburgerMenu } from "./AnimatedHamburgerMenu";
 
 export const NavBar: FC = () => {

@@ -1,7 +1,7 @@
 import { Transition } from "@headlessui/react";
 import clsx from "clsx";
 import cntl from "cntl";
-import { FC, useState } from "react";
+import { FC, Fragment, useCallback, useState } from "react";
 
 import { HoverMenu } from "./HoverMenu";
 import { MenuItemConfig } from "./types";
@@ -42,72 +42,84 @@ export const HoverMenuSimpleExample: FC = () => {
       activeKey={activeColor}
       items={ITEMS}
       itemConfig={ITEM_CONFIG}
-      onSelect={(key) => setActiveColor(key)}
+      onSelect={setActiveColor}
       ariaLabel={"Select Color"}
-      MenuButtonComponent={({ activeKey }) => (
-        <div
-          className="
-            justify-left
-            relative
-            inline-flex
-            w-full
-            rounded-md
-            bg-black
-            bg-opacity-20
-            px-4 py-2
-            text-sm
-            font-medium
-            text-white
-            hover:bg-opacity-30
-            focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
-          "
-        >
-          {ITEM_CONFIG[activeKey].label}
-        </div>
+      WrapperComponent={useCallback(
+        ({ children }) => (
+          <div className="relative inline-block">{children}</div>
+        ),
+        []
       )}
-      TransitionComponent={({ children, isActive }) => (
-        <Transition
-          show={isActive}
-          as="div"
-          className={cntl`absolute`}
-          enter={cntl`transition ease-out duration-100`}
-          enterFrom={cntl`transform opacity-0 scale-95`}
-          enterTo={cntl`transform opacity-100 scale-100`}
-          leave={cntl`transition ease-in duration-75`}
-          leaveFrom={cntl`transform opacity-100 scale-100`}
-          leaveTo={cntl`transform opacity-0 scale-95`}
-        >
-          {children}
-        </Transition>
+      MenuButtonComponent={useCallback(
+        ({ activeKey }) => (
+          <div
+            className="
+              inline-flex 
+              justify-center
+              rounded-md 
+              bg-black 
+              bg-opacity-20 
+              px-4 py-2
+              text-sm 
+              font-medium 
+              text-white 
+              hover:bg-opacity-30                
+              focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
+           "
+          >
+            {ITEM_CONFIG[activeKey].label}
+          </div>
+        ),
+        []
       )}
-      MenuItemsComponent={({ children }) => (
-        <div
-          // mt-2
-          className="
-            absolute left-0
-            z-10 
-            flex
-            w-64
-            origin-top-right
-            flex-col
-            divide-y
-            divide-gray-100
-            rounded-md
-            bg-white
-            px-1
-            py-1
-            shadow-lg
-            ring-1 ring-black ring-opacity-5
-            focus:outline-none
-          "
-        >
-          {children}
-        </div>
+      TransitionComponent={useCallback(
+        ({ children, isActive }) => (
+          <Transition
+            show={isActive}
+            as={Fragment}
+            enter={cntl`transition ease-out duration-100`}
+            enterFrom={cntl`transform opacity-0 scale-95`}
+            enterTo={cntl`transform opacity-100 scale-100`}
+            leave={cntl`transition ease-in duration-75`}
+            leaveFrom={cntl`transform opacity-100 scale-100`}
+            leaveTo={cntl`transform opacity-0 scale-95`}
+          >
+            {children}
+          </Transition>
+        ),
+        []
       )}
-      MenuItemComponent={({ itemKey, itemConfig, active, selected }) => (
-        <div
-          className={clsx(
-            `
+      MenuItemsComponent={useCallback(
+        ({ children }) => (
+          <div
+            className="
+              absolute left-0
+              z-10 
+              flex
+              w-64
+              origin-top-right
+              flex-col
+              divide-y
+              divide-gray-100
+              rounded-md
+              bg-white
+              px-1
+              py-1
+              shadow-lg
+              ring-1 ring-black ring-opacity-5
+              focus:outline-none
+            "
+          >
+            {children}
+          </div>
+        ),
+        []
+      )}
+      MenuItemComponent={useCallback(
+        ({ itemKey, itemConfig, active, selected }) => (
+          <div
+            className={clsx(
+              `
               group
               flex
               w-full
@@ -116,14 +128,16 @@ export const HoverMenuSimpleExample: FC = () => {
               px-2
               py-2 text-sm
             `,
-            {
-              "bg-violet-500 text-white": active,
-              "text-gray-900": !active,
-            }
-          )}
-        >
-          {itemConfig[itemKey].label}: {JSON.stringify({ active, selected })}
-        </div>
+              {
+                "bg-violet-500 text-white": active,
+                "text-gray-900": !active,
+              }
+            )}
+          >
+            {itemConfig[itemKey].label}: {JSON.stringify({ active, selected })}
+          </div>
+        ),
+        []
       )}
     />
   );
