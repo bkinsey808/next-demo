@@ -2,10 +2,11 @@ import Head from "next/head";
 import Image from "next/image";
 import { FC } from "react";
 
-import { DarkModeHoverMenu } from "../DarkModeHoverMenu";
+import ComboboxWithMenu from "../AriakitHoverMenu/AriakitHoverMenu";
+// import { DarkModeHoverMenu } from "../DarkModeHoverMenu";
 import { HelloWorld } from "../HelloWorld";
-import { HoverMenuSimpleExample } from "../HoverMenu/HoverMenuSimpleExample";
-import { NavBar } from "../NavBar";
+// import { HoverMenuSimpleExample } from "../HoverMenu/HoverMenuSimpleExample";
+// import { NavBar } from "../NavBar";
 import styles from "./HomeContent.module.css";
 
 export const HomeContent: FC = () => {
@@ -17,7 +18,9 @@ export const HomeContent: FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavBar />
+      <ComboboxWithMenu />
+
+      {/* <NavBar />
 
       <div className="w-64 text-right">
         <DarkModeHoverMenu />
@@ -25,7 +28,7 @@ export const HomeContent: FC = () => {
 
       <div className="w-64 text-right">
         <HoverMenuSimpleExample />
-      </div>
+      </div> */}
 
       <HelloWorld />
 
