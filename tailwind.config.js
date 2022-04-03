@@ -26,8 +26,6 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/tw-elements/dist/js/**/*.js",
   ],
-  // for tw-elements
-  // plugins: [require("tw-elements/dist/plugin")],
   theme: {
     extend: {
       colors,

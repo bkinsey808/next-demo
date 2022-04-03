@@ -93,10 +93,10 @@ exports[`Storyshots Components/Hover Menu/Hover Menu Simple Example Hover Menu S
 exports[`Storyshots Pages/Home Home Page 1`] = `
 <div>
   <div
-    className="flex flex-col sm:flex-row"
+    className="flex w-32 flex-col sm:flex-row"
   >
     <div
-      className="relative inline-block"
+      className="relative inline-flex flex-col"
     >
       <button
         aria-expanded={false}
@@ -113,14 +113,14 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
         type="button"
       >
         <div
-          className=" inline-flex  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+          className=" justify-left inline-flex  w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
         >
           Green
         </div>
       </button>
     </div>
     <div
-      className="relative inline-block"
+      className="relative inline-flex flex-col"
     >
       <button
         aria-expanded={false}
@@ -137,14 +137,14 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
         type="button"
       >
         <div
-          className=" inline-flex  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+          className=" justify-left inline-flex  w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
         >
           Green
         </div>
       </button>
     </div>
     <div
-      className="relative inline-block"
+      className="relative inline-flex flex-col"
     >
       <button
         aria-expanded={false}
@@ -161,7 +161,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
         type="button"
       >
         <div
-          className=" inline-flex  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+          className=" justify-left inline-flex  w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
         >
           Green
         </div>

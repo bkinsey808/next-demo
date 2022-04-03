@@ -27,7 +27,7 @@ export const HomeContent: FC = () => {
 
       <HelloWorld /> */}
 
-      <div className="flex flex-col sm:flex-row">
+      <div className="flex w-32 flex-col sm:flex-row">
         <NavMenu />
         <NavMenu />
         <NavMenu />

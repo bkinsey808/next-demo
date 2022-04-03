@@ -45,7 +45,7 @@ export const NavMenu: FC = () => {
       ariaLabel={"Select Color"}
       WrapperComponent={useCallback(
         ({ children }) => (
-          <div className="relative inline-block">{children}</div>
+          <div className="relative inline-flex flex-col">{children}</div>
         ),
         []
       )}
@@ -53,8 +53,9 @@ export const NavMenu: FC = () => {
         ({ activeKey, itemConfig }) => (
           <div
             className="
+              justify-left
               inline-flex 
-              justify-center
+              w-full
               rounded-md 
               bg-black 
               bg-opacity-20 
@@ -92,11 +93,10 @@ export const NavMenu: FC = () => {
         ({ children }) => (
           <div
             className="
-              left-0 
-              z-10
-              flex 
-              w-64
-              origin-top-right
+              left-0
+              inline-flex 
+              w-full
+              origin-top-right 
               flex-col
               divide-y
               divide-gray-100
@@ -106,8 +106,10 @@ export const NavMenu: FC = () => {
               py-1
               shadow-lg
               ring-1
-              ring-black ring-opacity-5 focus:outline-none
-              sm:absolute
+              ring-black
+              ring-opacity-5
+              focus:outline-none sm:absolute sm:z-10
+              sm:w-64
             "
           >
             {children}
@@ -120,10 +122,9 @@ export const NavMenu: FC = () => {
           <div
             className={clsx(
               `
-              group
-              flex
-              w-full
-              items-center
+              overflow-hidden
+              whitespace-normal
+              break-words
               rounded-md
               px-2
               py-2 text-sm
