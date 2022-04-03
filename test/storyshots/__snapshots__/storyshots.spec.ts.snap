@@ -70,7 +70,7 @@ exports[`Storyshots Components/Hover Menu/Hover Menu Simple Example Hover Menu S
       aria-expanded={false}
       aria-haspopup={true}
       aria-label="Select Color"
-      id="headlessui-menu-button-3"
+      id="headlessui-menu-button-5"
       onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
@@ -91,11 +91,9 @@ exports[`Storyshots Components/Hover Menu/Hover Menu Simple Example Hover Menu S
 `;
 
 exports[`Storyshots Pages/Home Home Page 1`] = `
-<div
-  className="container"
->
+<div>
   <div
-    className="w-64 text-right"
+    className="flex flex-col sm:flex-row"
   >
     <div
       className="relative inline-block"
@@ -121,210 +119,82 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
         </div>
       </button>
     </div>
+    <div
+      className="relative inline-block"
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        aria-label="Select Color"
+        id="headlessui-menu-button-3"
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
+      >
+        <div
+          className=" inline-flex  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+        >
+          Green
+        </div>
+      </button>
+    </div>
+    <div
+      className="relative inline-block"
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        aria-label="Select Color"
+        id="headlessui-menu-button-4"
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        type="button"
+      >
+        <div
+          className=" inline-flex  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+        >
+          Green
+        </div>
+      </button>
+    </div>
   </div>
   <main
-    className="main"
+    className="px-64"
   >
     <h1
-      className="title"
+      className="text-4xl font-bold"
     >
-      Welcome to
-       
-      <a
-        className="text-colorSecondary"
-        href="https://nextjs.org"
+      <span
+        className="text-gray-700"
       >
-        Next.js!!
-      </a>
+        Hello
+      </span>
+      <span
+        className="text-gray-500"
+      >
+        World
+      </span>
     </h1>
     <p
-      className="description"
+      className="text-gray-700"
     >
-      Get started by editing
-       
-      <code
-        className="code"
-      >
-        pages/index.tsx
-      </code>
+      Do adipisicing reprehenderit ad mollit consectetur laboris. Velit pariatur exercitation cupidatat voluptate anim id anim aliquip nulla voluptate. Ut commodo nostrud deserunt dolor aliqua et aliquip magna est sunt ipsum tempor fugiat quis. Laborum ipsum amet enim consectetur id sit eu veniam elit. Aliquip labore laboris adipisicing commodo sit Lorem eiusmod nostrud cillum laboris ad ad. Occaecat amet eu nulla et magna nulla aute ipsum. Do laborum aute pariatur consequat occaecat velit esse labore. Id dolore do irure laborum aliquip veniam et proident. Lorem officia quis eu do. Aliquip voluptate voluptate consequat ex enim deserunt. Velit do consectetur esse adipisicing voluptate nulla minim magna quis incididunt consequat. Velit et ullamco excepteur Lorem quis minim do irure ad magna incididunt ea fugiat. Minim officia culpa culpa ullamco veniam anim pariatur irure cillum. Officia duis dolore dolore ut aliqua quis velit laborum qui Lorem. Proident officia id veniam anim nisi.
     </p>
-    <div
-      className="grid"
+    <p
+      className="text-gray-700"
     >
-      <a
-        className="card"
-        href="https://nextjs.org/docs"
-      >
-        <h2>
-          Documentation →
-        </h2>
-        <p>
-          Find in-depth information about Next.js features and API.
-        </p>
-      </a>
-      <a
-        className="card"
-        href="https://nextjs.org/learn"
-      >
-        <h2>
-          Learn →
-        </h2>
-        <p>
-          Learn about Next.js in an interactive course with quizzes!
-        </p>
-      </a>
-      <a
-        className="card"
-        href="https://github.com/vercel/next.js/tree/canary/examples"
-      >
-        <h2>
-          Examples →
-        </h2>
-        <p>
-          Discover and deploy boilerplate example Next.js projects.
-        </p>
-      </a>
-      <a
-        className="card"
-        href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-      >
-        <h2>
-          Deploy →
-        </h2>
-        <p>
-          Instantly deploy your Next.js site to a public URL with Vercel.
-        </p>
-      </a>
-    </div>
+      Adipisicing cupidatat minim pariatur aliquip anim sunt ad eiusmod tempor nulla qui est. Reprehenderit tempor laboris enim ex quis adipisicing pariatur. Enim amet ullamco ut eiusmod laboris sunt sit. Reprehenderit officia dolore ipsum cillum. Ea quis consectetur mollit sit ad cillum occaecat nisi quis deserunt. Labore id tempor culpa occaecat sint dolore est ex in eiusmod sint dolore id occaecat. Consequat irure officia consectetur ipsum in ullamco nulla magna reprehenderit ex eu aute. Est sit in fugiat Lorem. Consequat est commodo laboris sunt. Esse ea et velit amet ex. Dolor est sunt adipisicing magna sunt nulla consectetur qui. Elit aute laborum in esse aliquip proident adipisicing anim laborum irure et labore. Qui tempor sunt tempor aute elit aute incididunt et excepteur incididunt. Enim aliqua cupidatat tempor pariatur aliqua proident deserunt nisi esse quis aute aliqua esse. Velit id mollit tempor commodo aliquip occaecat elit cupidatat. Id pariatur commodo sit est laboris culpa amet anim tempor aute ad ea non. Pariatur non aute cillum ea nostrud velit cillum reprehenderit voluptate. Esse voluptate occaecat incididunt tempor culpa.
+    </p>
   </main>
-  <footer
-    className="footer"
-  >
-    <a
-      href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      Powered by
-       
-      <span
-        className="logo"
-      >
-        <span
-          style={
-            Object {
-              "background": "none",
-              "border": 0,
-              "boxSizing": "border-box",
-              "display": "inline-block",
-              "height": "initial",
-              "margin": 0,
-              "maxWidth": "100%",
-              "opacity": 1,
-              "overflow": "hidden",
-              "padding": 0,
-              "position": "relative",
-              "width": "initial",
-            }
-          }
-        >
-          <span
-            style={
-              Object {
-                "background": "none",
-                "border": 0,
-                "boxSizing": "border-box",
-                "display": "block",
-                "height": "initial",
-                "margin": 0,
-                "maxWidth": "100%",
-                "opacity": 1,
-                "padding": 0,
-                "width": "initial",
-              }
-            }
-          >
-            <img
-              alt=""
-              aria-hidden={true}
-              src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2772%27%20height=%2716%27/%3e"
-              style={
-                Object {
-                  "background": "none",
-                  "border": 0,
-                  "display": "block",
-                  "height": "initial",
-                  "margin": 0,
-                  "maxWidth": "100%",
-                  "opacity": 1,
-                  "padding": 0,
-                  "width": "initial",
-                }
-              }
-            />
-          </span>
-          <img
-            alt="Vercel Logo"
-            data-nimg="intrinsic"
-            decoding="async"
-            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-            style={
-              Object {
-                "border": "none",
-                "bottom": 0,
-                "boxSizing": "border-box",
-                "display": "block",
-                "height": 0,
-                "left": 0,
-                "margin": "auto",
-                "maxHeight": "100%",
-                "maxWidth": "100%",
-                "minHeight": "100%",
-                "minWidth": "100%",
-                "objectFit": undefined,
-                "objectPosition": undefined,
-                "padding": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-                "width": 0,
-              }
-            }
-          />
-          <noscript>
-            <img
-              alt="Vercel Logo"
-              data-nimg="intrinsic"
-              decoding="async"
-              loading="lazy"
-              src="/vercel.svg"
-              style={
-                Object {
-                  "border": "none",
-                  "bottom": 0,
-                  "boxSizing": "border-box",
-                  "display": "block",
-                  "height": 0,
-                  "left": 0,
-                  "margin": "auto",
-                  "maxHeight": "100%",
-                  "maxWidth": "100%",
-                  "minHeight": "100%",
-                  "minWidth": "100%",
-                  "objectFit": undefined,
-                  "objectPosition": undefined,
-                  "padding": 0,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 0,
-                  "width": 0,
-                }
-              }
-            />
-          </noscript>
-        </span>
-      </span>
-    </a>
-  </footer>
 </div>
 `;

@@ -3,8 +3,7 @@ import clsx from "clsx";
 import cntl from "cntl";
 import { FC, Fragment, useCallback, useState } from "react";
 
-import { HoverMenu } from "./HoverMenu";
-import { MenuItemConfig } from "./types";
+import { HoverMenu, MenuItemConfig } from "../HoverMenu";
 
 export interface ConfigData {
   label: string;
@@ -34,7 +33,7 @@ export const ITEM_CONFIG: MenuItemConfig<ConfigData, ColorEnum> = {
   },
 } as const;
 
-export const HoverMenuSimpleExample: FC = () => {
+export const NavMenu: FC = () => {
   const [activeColor, setActiveColor] = useState<ColorEnum>(ColorEnum.GREEN);
 
   return (
@@ -93,9 +92,9 @@ export const HoverMenuSimpleExample: FC = () => {
         ({ children }) => (
           <div
             className="
-              absolute left-0
-              z-10 
-              flex
+              left-0 
+              z-10
+              flex 
               w-64
               origin-top-right
               flex-col
@@ -106,8 +105,9 @@ export const HoverMenuSimpleExample: FC = () => {
               px-1
               py-1
               shadow-lg
-              ring-1 ring-black ring-opacity-5
-              focus:outline-none
+              ring-1
+              ring-black ring-opacity-5 focus:outline-none
+              sm:absolute
             "
           >
             {children}

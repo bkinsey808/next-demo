@@ -15,7 +15,10 @@ interface Props<MenuItemConfigData, MenuItemKeyType extends string> {
   items: MenuItemKeyType[];
   itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
   WrapperComponent?: FC;
-  MenuButtonComponent: MenuButtonComponentType<MenuItemKeyType>;
+  MenuButtonComponent: MenuButtonComponentType<
+    MenuItemConfigData,
+    MenuItemKeyType
+  >;
   TransitionComponent?: FC<{ isActive: boolean }>;
   MenuItemsComponent: FC;
   MenuItemComponent: MenuItemComponentType<MenuItemConfigData, MenuItemKeyType>;
@@ -57,7 +60,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
           onMouseLeave={onMouseLeave}
           onMouseDown={onMouseDown}
         >
-          <MenuButtonComponent activeKey={activeKey} />
+          <MenuButtonComponent activeKey={activeKey} itemConfig={itemConfig} />
         </Menu.Button>
         <TransitionComponent isActive={isActive}>
           <Menu.Items onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
