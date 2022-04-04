@@ -70,7 +70,7 @@ exports[`Storyshots Components/Hover Menu/Hover Menu Simple Example Hover Menu S
       aria-expanded={false}
       aria-haspopup={true}
       aria-label="Select Color"
-      id="headlessui-menu-button-5"
+      id="headlessui-menu-button-6"
       onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
@@ -168,6 +168,34 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
       </button>
     </div>
   </div>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    aria-label="Select dark/light mode"
+    id="headlessui-menu-button-5"
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className=" justify-left relative inline-flex  h-7 rounded-md  bg-black  bg-opacity-20 px-4 py-2  text-left  text-sm  font-medium                 text-white hover:bg-opacity-30 focus-visible:ring-2         focus-visible:ring-white focus-visible:ring-opacity-75 "
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clipRule="evenodd"
+        d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z"
+        fillRule="evenodd"
+      />
+    </svg>
+  </button>
   <main
     className="px-64"
   >

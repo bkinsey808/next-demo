@@ -5,10 +5,6 @@ export type MenuItem<MenuItemKey, ConfigData> = {
   data: ConfigData;
 };
 
-export type MenuItemConfig<Data, MenuItemKeyType extends string> = {
-  [key in MenuItemKeyType]: Data;
-};
-
 export type WrapperComponentType = FC;
 
 export type MenuButtonComponentType<

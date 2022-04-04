@@ -8,13 +8,19 @@ import {
   MenuButtonComponentType,
   MenuItemComponentType,
 } from "../HoverMenu";
-import { ITEMS, ITEM_CONFIG, TernaryDarkModeEnum } from "./consts";
+import { MenuItemsComponentType } from "../HoverMenu/types";
+import { ITEMS, TernaryDarkModeEnum } from "./consts";
 import { DarkModeMenuItemConfigData } from "./types";
 
-const MenuButtonComponent: MenuButtonComponentType<TernaryDarkModeEnum> = ({
-  activeKey,
-}) => {
-  const MenuButtonIcon = ITEM_CONFIG[activeKey].Icon;
+const MenuButtonComponent: MenuButtonComponentType<
+  TernaryDarkModeEnum,
+  DarkModeMenuItemConfigData
+> = ({ item }) => {
+  const MenuButtonIcon = item?.data?.Icon;
+  if (!MenuButtonIcon) {
+    return <></>;
+  }
+
   return (
     <MenuButtonIcon
       className="
@@ -36,7 +42,7 @@ const MenuButtonComponent: MenuButtonComponentType<TernaryDarkModeEnum> = ({
   );
 };
 
-const MenuItemsComponent: FC = ({ children }) => (
+const MenuItemsComponent: MenuItemsComponentType = ({ children }) => (
   <div
     className="
       absolute
@@ -62,10 +68,11 @@ const MenuItemsComponent: FC = ({ children }) => (
 );
 
 const MenuItemComponent: MenuItemComponentType<
-  DarkModeMenuItemConfigData,
-  TernaryDarkModeEnum
-> = ({ itemKey, itemConfig, active, selected }) => {
-  const { label, Icon } = itemConfig[itemKey];
+  TernaryDarkModeEnum,
+  DarkModeMenuItemConfigData
+> = ({ item, active, selected }) => {
+  const label = item.data.label;
+  const Icon = item.data.Icon;
   const activeAndSelected = active && selected;
 
   return (
@@ -106,10 +113,9 @@ export const DarkModeHoverMenu: FC = () => {
   };
 
   return (
-    <HoverMenu<DarkModeMenuItemConfigData, TernaryDarkModeEnum>
+    <HoverMenu
       activeKey={ternaryDarkMode as TernaryDarkModeEnum}
       items={ITEMS}
-      itemConfig={ITEM_CONFIG}
       MenuButtonComponent={MenuButtonComponent}
       MenuItemsComponent={MenuItemsComponent}
       MenuItemComponent={MenuItemComponent}

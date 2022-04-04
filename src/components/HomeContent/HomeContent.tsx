@@ -2,6 +2,7 @@ import Head from "next/head";
 // import Image from "next/image";
 import { FC } from "react";
 
+import { DarkModeHoverMenu } from "../DarkModeHoverMenu";
 import { NavMenu } from "../NavBar/NavMenu";
 
 // import { NavBar } from "../NavBar";
@@ -32,6 +33,7 @@ export const HomeContent: FC = () => {
         <NavMenu />
         <NavMenu />
       </div>
+      <DarkModeHoverMenu />
 
       <main className="px-64">
         <h1 className="text-4xl font-bold">
