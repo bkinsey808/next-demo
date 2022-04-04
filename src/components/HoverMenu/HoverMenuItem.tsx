@@ -1,43 +1,34 @@
 import { Menu } from "@headlessui/react";
 
-import { MenuItemComponentType, MenuItemConfig } from "./types";
+import { MenuItem, MenuItemComponentType } from "./types";
 import { useHoverMenuItem } from "./useHoverMenuItem";
 
-export const HoverMenuItem = <
-  MenuItemConfigData,
-  MenuItemKeyType extends string
->({
+export const HoverMenuItem = <MenuItemKey extends string, MenuItemData>({
   activeKey,
-  itemKey,
-  itemConfig,
+  item,
   getOnMenuItemButtonClick,
   MenuItemComponent,
 }: {
-  activeKey: MenuItemKeyType;
-  itemKey: MenuItemKeyType;
-  itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
-  getOnMenuItemButtonClick: (key: MenuItemKeyType) => () => void;
-  MenuItemComponent: MenuItemComponentType<MenuItemConfigData, MenuItemKeyType>;
+  activeKey: MenuItemKey;
+  item: MenuItem<MenuItemKey, MenuItemData>;
+  getOnMenuItemButtonClick: (key: MenuItemKey) => () => void;
+  MenuItemComponent: MenuItemComponentType<MenuItemKey, MenuItemData>;
 }) => {
-  const { buttonRef, selected } = useHoverMenuItem<MenuItemKeyType>({
+  const itemKey = item.key;
+  const { buttonRef, selected } = useHoverMenuItem<MenuItemKey>({
     activeKey,
     itemKey,
   });
 
   return (
-    <Menu.Item key={itemKey}>
+    <Menu.Item key={item.key}>
       {({ active }) => (
         <button
           ref={buttonRef}
           className="focus:outline-none focus-visible:outline-none"
           onClick={getOnMenuItemButtonClick(itemKey)}
         >
-          <MenuItemComponent
-            itemKey={itemKey}
-            itemConfig={itemConfig}
-            active={active}
-            selected={selected}
-          />
+          <MenuItemComponent item={item} active={active} selected={selected} />
         </button>
       )}
     </Menu.Item>

@@ -1,29 +1,37 @@
+import { FC } from "react";
+
+export type MenuItem<MenuItemKey, ConfigData> = {
+  key: MenuItemKey;
+  data: ConfigData;
+};
+
 export type MenuItemConfig<Data, MenuItemKeyType extends string> = {
   [key in MenuItemKeyType]: Data;
 };
 
+export type WrapperComponentType = FC;
+
 export type MenuButtonComponentType<
-  MenuItemConfigData,
-  MenuItemKeyType extends string
+  MenuItemKey extends string,
+  MenuItemData
 > = ({
   activeKey,
-  itemConfig,
+  item,
 }: {
-  activeKey: MenuItemKeyType;
-  itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
+  activeKey: MenuItemKey;
+  item?: MenuItem<MenuItemKey, MenuItemData>;
 }) => JSX.Element;
 
-export type MenuItemComponentType<
-  MenuItemConfigData,
-  MenuItemKeyType extends string
-> = ({
-  itemKey,
-  itemConfig,
+export type TransitionComponentType = FC<{ isActive: boolean }>;
+
+export type MenuItemsComponentType = FC;
+
+export type MenuItemComponentType<MenuItemKey extends string, MenuItemData> = ({
+  item,
   active,
   selected,
 }: {
-  itemKey: MenuItemKeyType;
-  itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
+  item: MenuItem<MenuItemKey, MenuItemData>;
   active: boolean;
   selected: boolean;
 }) => JSX.Element;

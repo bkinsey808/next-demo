@@ -1,34 +1,34 @@
 import { Menu } from "@headlessui/react";
-import { FC, Fragment } from "react";
+import { Fragment } from "react";
 
 import { DefaultTransitionComponent } from "./DefaultTransitionComponent";
 import { HoverMenuItem } from "./HoverMenuItem";
 import {
   MenuButtonComponentType,
+  MenuItem,
   MenuItemComponentType,
-  MenuItemConfig,
+  MenuItemsComponentType,
+  TransitionComponentType,
+  WrapperComponentType,
 } from "./types";
 import { useHoverMenu } from "./useHoverMenu";
 
-interface Props<MenuItemConfigData, MenuItemKeyType extends string> {
-  activeKey: MenuItemKeyType;
-  items: MenuItemKeyType[];
-  itemConfig: MenuItemConfig<MenuItemConfigData, MenuItemKeyType>;
-  WrapperComponent?: FC;
-  MenuButtonComponent: MenuButtonComponentType<
-    MenuItemConfigData,
-    MenuItemKeyType
-  >;
-  TransitionComponent?: FC<{ isActive: boolean }>;
-  MenuItemsComponent: FC;
-  MenuItemComponent: MenuItemComponentType<MenuItemConfigData, MenuItemKeyType>;
-  onSelect?: (key: MenuItemKeyType) => void;
+interface Props<MenuItemKey extends string, MenuItemData> {
+  activeKey: MenuItemKey;
+  items: readonly MenuItem<MenuItemKey, MenuItemData>[];
+  WrapperComponent?: WrapperComponentType;
+  MenuButtonComponent: MenuButtonComponentType<MenuItemKey, MenuItemData>;
+  TransitionComponent?: TransitionComponentType;
+  MenuItemsComponent: MenuItemsComponentType;
+  MenuItemComponent: MenuItemComponentType<MenuItemKey, MenuItemData>;
+  onSelect?: (key: MenuItemKey) => void;
   ariaLabel: string;
 }
 
-export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
+export const HoverMenu: <MenuItemKey extends string, MenuItemData>(
+  props: Props<MenuItemKey, MenuItemData>
+) => JSX.Element = <MenuItemKey extends string, MenuItemData>({
   items,
-  itemConfig,
   activeKey,
   WrapperComponent = Fragment,
   MenuButtonComponent,
@@ -37,7 +37,7 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
   MenuItemComponent,
   onSelect,
   ariaLabel,
-}: Props<MenuItemConfigData, MenuItemKeyType>) => {
+}: Props<MenuItemKey, MenuItemData>) => {
   const {
     onMouseEnter,
     onMouseLeave,
@@ -60,18 +60,20 @@ export const HoverMenu = <MenuItemConfigData, MenuItemKeyType extends string>({
           onMouseLeave={onMouseLeave}
           onMouseDown={onMouseDown}
         >
-          <MenuButtonComponent activeKey={activeKey} itemConfig={itemConfig} />
+          <MenuButtonComponent
+            activeKey={activeKey}
+            item={items.find((item) => item.key === activeKey)}
+          />
         </Menu.Button>
         <TransitionComponent isActive={isActive}>
           <Menu.Items onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <MenuItemsComponent>
-              {items.map((itemKey) => {
+              {items.map((item) => {
                 return (
                   <HoverMenuItem
-                    key={itemKey}
-                    itemKey={itemKey}
+                    key={item.key}
                     activeKey={activeKey}
-                    itemConfig={itemConfig}
+                    item={item}
                     getOnMenuItemButtonClick={getOnMenuItemButtonClick}
                     MenuItemComponent={MenuItemComponent}
                   />

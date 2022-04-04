@@ -13,7 +13,7 @@ exports[`HoverMenuSimpleExample renders color 1`] = `
       type="button"
     >
       <div
-        class=" inline-flex  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+        class=" justify-left inline-flex  w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
       >
         Green
       </div>
@@ -36,7 +36,7 @@ exports[`HoverMenuSimpleExample renders color 2`] = `
       type="button"
     >
       <div
-        class=" inline-flex  justify-center rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
+        class=" justify-left inline-flex  w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
       >
         Red
       </div>
@@ -50,7 +50,7 @@ exports[`HoverMenuSimpleExample renders color 2`] = `
       tabindex="0"
     >
       <div
-        class=" absolute left-0 z-10  flex w-64 origin-top-right flex-col divide-y divide-gray-100 rounded-md bg-white px-1 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none "
+        class=" left-0 inline-flex  w-full origin-top-right  flex-col divide-y divide-gray-100 rounded-md bg-white px-1 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:absolute sm:z-10 sm:w-64 "
       >
         <button
           class="focus:outline-none focus-visible:outline-none"
@@ -60,14 +60,13 @@ exports[`HoverMenuSimpleExample renders color 2`] = `
         >
           <div
             class="
-              group
-              flex
-              w-full
-              items-center
-              rounded-md
-              px-2
-              py-2 text-sm
-             bg-violet-500 text-white"
+      overflow-hidden
+      whitespace-normal
+      break-words
+      rounded-md
+      px-2
+      py-2 text-sm
+     bg-violet-500 text-white"
           >
             Green: {"active":true,"selected":false}
           </div>
@@ -80,14 +79,13 @@ exports[`HoverMenuSimpleExample renders color 2`] = `
         >
           <div
             class="
-              group
-              flex
-              w-full
-              items-center
-              rounded-md
-              px-2
-              py-2 text-sm
-             text-gray-900"
+      overflow-hidden
+      whitespace-normal
+      break-words
+      rounded-md
+      px-2
+      py-2 text-sm
+     text-gray-900"
           >
             Yellow: {"active":false,"selected":false}
           </div>
@@ -100,14 +98,13 @@ exports[`HoverMenuSimpleExample renders color 2`] = `
         >
           <div
             class="
-              group
-              flex
-              w-full
-              items-center
-              rounded-md
-              px-2
-              py-2 text-sm
-             text-gray-900"
+      overflow-hidden
+      whitespace-normal
+      break-words
+      rounded-md
+      px-2
+      py-2 text-sm
+     text-gray-900"
           >
             Red: {"active":false,"selected":true}
           </div>
