@@ -46,7 +46,7 @@ const MenuItemsComponent: MenuItemsComponentType = ({ children }) => (
   <div
     className="
       absolute
-      left-0
+      right-0
       z-10 mt-2
       flex
       w-64 

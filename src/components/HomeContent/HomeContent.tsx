@@ -2,10 +2,7 @@ import Head from "next/head";
 // import Image from "next/image";
 import { FC } from "react";
 
-import { DarkModeHoverMenu } from "../DarkModeHoverMenu";
-import { NavMenus } from "../NavBar/NavMenus";
-
-// import { NavBar } from "../NavBar";
+import { NavBar } from "../NavBar";
 
 export const HomeContent: FC = () => {
   return (
@@ -16,21 +13,7 @@ export const HomeContent: FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavMenus />
-
-      {/* <NavBar />
-
-      <div className="w-64 text-right">
-        <DarkModeHoverMenu />
-      </div>
-
-      <div className="w-64 text-right">
-        <HoverMenuSimpleExample />
-      </div>
-
-      <HelloWorld /> */}
-
-      <DarkModeHoverMenu />
+      <NavBar />
 
       <main className="px-64">
         <h1 className="text-4xl font-bold">

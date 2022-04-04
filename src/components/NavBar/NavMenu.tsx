@@ -102,7 +102,6 @@ const MenuItemsComponent: MenuItemsComponentType = ({ children }) => (
 const MenuItemComponent: MenuItemComponentType<string, NavItemData> = ({
   item,
   active,
-  selected,
 }) => (
   <div
     className={clsx(
@@ -120,7 +119,7 @@ const MenuItemComponent: MenuItemComponentType<string, NavItemData> = ({
       }
     )}
   >
-    {item?.data?.label}: {JSON.stringify({ active, selected })}
+    {item?.data?.label}
   </div>
 );
 
