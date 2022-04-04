@@ -10,8 +10,8 @@ export const NavBar: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="flex">
-      <nav ref={navRef} className="flex w-full flex-row">
+    <header className="flex h-spacingHeaderHeight">
+      <nav ref={navRef} className="relative flex w-full flex-row">
         <div className="flex">
           <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </div>

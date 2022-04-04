@@ -23,7 +23,7 @@ const navItems = [
 ];
 
 export const NavMenus = () => (
-  <div className="flex w-32 flex-col sm:flex-row">
+  <div className="absolute right-0 flex w-32 flex-col sm:relative sm:flex-row">
     {navItems.map((navItem) => (
       <NavMenu key={navItem.key} primaryNavItem={navItem} />
     ))}

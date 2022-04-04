@@ -7,9 +7,9 @@ const DESIGN_TOKENS = {
   colorQuaternary: "#f50057",
   colorQuinary:    "#0400F5",
 
-  // layout
-  layoutHeaderHeight: "64px",
-  layoutHeaderScrolledHeight: "48px",
+  // spacing
+  spacingHeaderHeight: "64px",
+  spacingHeaderScrolledHeight: "48px",
 };
 
 module.exports = {
