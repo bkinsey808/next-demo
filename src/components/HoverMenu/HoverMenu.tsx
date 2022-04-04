@@ -14,7 +14,7 @@ import {
 import { useHoverMenu } from "./useHoverMenu";
 
 interface Props<MenuItemKey extends string, MenuItemData> {
-  activeKey: MenuItemKey;
+  activeKey?: MenuItemKey;
   items: readonly MenuItem<MenuItemKey, MenuItemData>[];
   WrapperComponent?: WrapperComponentType;
   MenuButtonComponent: MenuButtonComponentType<MenuItemKey, MenuItemData>;
@@ -65,7 +65,7 @@ export const HoverMenu: <MenuItemKey extends string, MenuItemData>(
             item={items.find((item) => item.key === activeKey)}
           />
         </Menu.Button>
-        <TransitionComponent isActive={isActive}>
+        <TransitionComponent isActive={isActive && items.length > 0}>
           <Menu.Items onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <MenuItemsComponent>
               {items.map((item) => {

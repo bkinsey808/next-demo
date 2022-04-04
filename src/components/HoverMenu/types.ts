@@ -14,7 +14,7 @@ export type MenuButtonComponentType<
   activeKey,
   item,
 }: {
-  activeKey: MenuItemKey;
+  activeKey?: MenuItemKey;
   item?: MenuItem<MenuItemKey, MenuItemData>;
 }) => JSX.Element;
 

@@ -13,31 +13,27 @@ import {
   WrapperComponentType,
 } from "../HoverMenu/types";
 
+export interface PrimaryNavItem {
+  key: string;
+  data: NavItemData;
+  items: MenuItem<string, NavItemData>[];
+}
+
 export interface NavItemData {
   label: string;
 }
-
-export const enum ColorEnum {
-  GREEN = "green",
-  YELLOW = "yellow",
-  RED = "red",
-}
-
-export const ITEMS: readonly MenuItem<ColorEnum, NavItemData>[] = [
-  { key: ColorEnum.GREEN, data: { label: "Green" } },
-  { key: ColorEnum.YELLOW, data: { label: "Yellow" } },
-  { key: ColorEnum.RED, data: { label: "Red" } },
-] as const;
 
 const WrapperComponent: WrapperComponentType = ({ children }) => (
   <div className="relative inline-block">{children}</div>
 );
 
-const MenuButtonComponent: MenuButtonComponentType<ColorEnum, NavItemData> = ({
-  item,
-}) => (
-  <div
-    className="
+const getMenuButtonComponent = (primaryNavItem: PrimaryNavItem) => {
+  const MenuButtonComponent: MenuButtonComponentType<
+    string,
+    NavItemData
+  > = () => (
+    <div
+      className="
       justify-left
       inline-flex 
       w-full
@@ -51,10 +47,13 @@ const MenuButtonComponent: MenuButtonComponentType<ColorEnum, NavItemData> = ({
       hover:bg-opacity-30                
       focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
   "
-  >
-    {item?.data?.label}
-  </div>
-);
+    >
+      {primaryNavItem.data.label}
+    </div>
+  );
+
+  return MenuButtonComponent;
+};
 
 const TransitionComponent: TransitionComponentType = ({
   children,
@@ -100,7 +99,7 @@ const MenuItemsComponent: MenuItemsComponentType = ({ children }) => (
   </div>
 );
 
-const MenuItemComponent: MenuItemComponentType<ColorEnum, NavItemData> = ({
+const MenuItemComponent: MenuItemComponentType<string, NavItemData> = ({
   item,
   active,
   selected,
@@ -125,17 +124,19 @@ const MenuItemComponent: MenuItemComponentType<ColorEnum, NavItemData> = ({
   </div>
 );
 
-export const NavMenu: FC = () => {
-  const [activeColor, setActiveColor] = useState<ColorEnum>(ColorEnum.GREEN);
+export const NavMenu: FC<{ primaryNavItem: PrimaryNavItem }> = ({
+  primaryNavItem,
+}) => {
+  const [activeUrl, setActiveUrl] = useState<string>();
 
   return (
     <HoverMenu
-      activeKey={activeColor}
-      items={ITEMS}
-      onSelect={setActiveColor}
-      ariaLabel={"Select Color"}
+      activeKey={activeUrl}
+      items={primaryNavItem.items}
+      onSelect={setActiveUrl}
+      ariaLabel={"Select Link"}
       WrapperComponent={WrapperComponent}
-      MenuButtonComponent={MenuButtonComponent}
+      MenuButtonComponent={getMenuButtonComponent(primaryNavItem)}
       TransitionComponent={TransitionComponent}
       MenuItemsComponent={MenuItemsComponent}
       MenuItemComponent={MenuItemComponent}

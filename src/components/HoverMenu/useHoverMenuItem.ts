@@ -4,7 +4,7 @@ export const useHoverMenuItem = <MenuItemKeyType>({
   activeKey,
   itemKey,
 }: {
-  activeKey: MenuItemKeyType;
+  activeKey?: MenuItemKeyType;
   itemKey: MenuItemKeyType;
 }) => {
   const selected = activeKey === itemKey;

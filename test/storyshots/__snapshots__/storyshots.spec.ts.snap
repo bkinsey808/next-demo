@@ -70,7 +70,7 @@ exports[`Storyshots Components/Hover Menu/Hover Menu Simple Example Hover Menu S
       aria-expanded={false}
       aria-haspopup={true}
       aria-label="Select Color"
-      id="headlessui-menu-button-6"
+      id="headlessui-menu-button-5"
       onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
@@ -101,7 +101,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup={true}
-        aria-label="Select Color"
+        aria-label="Select Link"
         id="headlessui-menu-button-2"
         onClick={[Function]}
         onFocus={[Function]}
@@ -115,7 +115,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
         <div
           className=" justify-left inline-flex  w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
         >
-          Green
+          Home
         </div>
       </button>
     </div>
@@ -125,7 +125,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup={true}
-        aria-label="Select Color"
+        aria-label="Select Link"
         id="headlessui-menu-button-3"
         onClick={[Function]}
         onFocus={[Function]}
@@ -139,31 +139,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
         <div
           className=" justify-left inline-flex  w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
         >
-          Green
-        </div>
-      </button>
-    </div>
-    <div
-      className="relative inline-block"
-    >
-      <button
-        aria-expanded={false}
-        aria-haspopup={true}
-        aria-label="Select Color"
-        id="headlessui-menu-button-4"
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        type="button"
-      >
-        <div
-          className=" justify-left inline-flex  w-full rounded-md  bg-black  bg-opacity-20  px-4 py-2 text-sm  font-medium  text-white  hover:bg-opacity-30                 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 "
-        >
-          Green
+          Features
         </div>
       </button>
     </div>
@@ -172,7 +148,7 @@ exports[`Storyshots Pages/Home Home Page 1`] = `
     aria-expanded={false}
     aria-haspopup={true}
     aria-label="Select dark/light mode"
-    id="headlessui-menu-button-5"
+    id="headlessui-menu-button-4"
     onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}

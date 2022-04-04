@@ -9,7 +9,7 @@ export const HoverMenuItem = <MenuItemKey extends string, MenuItemData>({
   getOnMenuItemButtonClick,
   MenuItemComponent,
 }: {
-  activeKey: MenuItemKey;
+  activeKey?: MenuItemKey;
   item: MenuItem<MenuItemKey, MenuItemData>;
   getOnMenuItemButtonClick: (key: MenuItemKey) => () => void;
   MenuItemComponent: MenuItemComponentType<MenuItemKey, MenuItemData>;
