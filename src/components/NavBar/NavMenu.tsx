@@ -1,7 +1,9 @@
 import { Transition } from "@headlessui/react";
 import clsx from "clsx";
 import cntl from "cntl";
-import { FC, Fragment, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { FC, Fragment } from "react";
 
 import { HoverMenu } from "../HoverMenu";
 import {
@@ -12,6 +14,7 @@ import {
   TransitionComponentType,
   WrapperComponentType,
 } from "../HoverMenu/types";
+import { NavItem } from "./types";
 
 export interface PrimaryNavItem {
   key: string;
@@ -27,29 +30,31 @@ const WrapperComponent: WrapperComponentType = ({ children }) => (
   <div className="relative inline-block">{children}</div>
 );
 
-const getMenuButtonComponent = (primaryNavItem: PrimaryNavItem) => {
+const getMenuButtonComponent = (navItem: NavItem) => {
   const MenuButtonComponent: MenuButtonComponentType<
     string,
     NavItemData
   > = () => (
-    <div
-      className="
-      justify-left
-      inline-flex 
-      w-full
-      rounded-md 
-      bg-black 
-      bg-opacity-20 
-      px-4 py-2
-      text-sm 
-      font-medium 
-      text-white 
-      hover:bg-opacity-30                
-      focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
-  "
-    >
-      {primaryNavItem.data.label}
-    </div>
+    <Link href={navItem.key}>
+      <a
+        className="
+          justify-left
+          inline-flex 
+          w-full
+          rounded-md 
+          bg-black 
+          bg-opacity-20 
+          px-4 py-2
+          text-sm 
+          font-medium 
+          text-white 
+          hover:bg-opacity-30                
+          focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
+        "
+      >
+        {navItem.data.label}
+      </a>
+    </Link>
   );
 
   return MenuButtonComponent;
@@ -81,8 +86,8 @@ const MenuItemsComponent: MenuItemsComponentType = ({ children }) => (
       w-full
       origin-top-right 
       flex-col
-      divide-y
-      divide-gray-100
+      divide-y-4
+      divide-transparent
       rounded-md
       bg-white
       px-1
@@ -106,13 +111,13 @@ const MenuItemComponent: MenuItemComponentType<string, NavItemData> = ({
   <div
     className={clsx(
       `
-      overflow-hidden
-      whitespace-normal
-      break-words
-      rounded-md
-      px-2
-      py-2 text-sm
-    `,
+          overflow-hidden
+          whitespace-normal
+          break-words
+          rounded-md
+          px-2
+          py-2 text-sm
+        `,
       {
         "bg-violet-500 text-white": active,
         "text-gray-900": !active,
@@ -123,19 +128,19 @@ const MenuItemComponent: MenuItemComponentType<string, NavItemData> = ({
   </div>
 );
 
-export const NavMenu: FC<{ primaryNavItem: PrimaryNavItem }> = ({
-  primaryNavItem,
-}) => {
-  const [activeUrl, setActiveUrl] = useState<string>();
+export const NavMenu: FC<{ navItem: NavItem }> = ({ navItem }) => {
+  const router = useRouter();
 
   return (
     <HoverMenu
-      activeKey={activeUrl}
-      items={primaryNavItem.items}
-      onSelect={setActiveUrl}
+      activeKey={router.asPath}
+      items={navItem.items}
+      onSelect={(url) => {
+        router.push(url);
+      }}
       ariaLabel={"Select Link"}
       WrapperComponent={WrapperComponent}
-      MenuButtonComponent={getMenuButtonComponent(primaryNavItem)}
+      MenuButtonComponent={getMenuButtonComponent(navItem)}
       TransitionComponent={TransitionComponent}
       MenuItemsComponent={MenuItemsComponent}
       MenuItemComponent={MenuItemComponent}

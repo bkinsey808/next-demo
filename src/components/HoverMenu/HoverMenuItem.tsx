@@ -26,7 +26,10 @@ export const HoverMenuItem = <MenuItemKey extends string, MenuItemData>({
         <button
           ref={buttonRef}
           className="focus:outline-none focus-visible:outline-none"
-          onClick={getOnMenuItemButtonClick(itemKey)}
+          onClick={() => {
+            console.log("clicked");
+            getOnMenuItemButtonClick(itemKey)();
+          }}
         >
           <MenuItemComponent item={item} active={active} selected={selected} />
         </button>

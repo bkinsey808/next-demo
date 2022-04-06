@@ -15,7 +15,7 @@ import { useHoverMenu } from "./useHoverMenu";
 
 interface Props<MenuItemKey extends string, MenuItemData> {
   activeKey?: MenuItemKey;
-  items: readonly MenuItem<MenuItemKey, MenuItemData>[];
+  items?: readonly MenuItem<MenuItemKey, MenuItemData>[];
   WrapperComponent?: WrapperComponentType;
   MenuButtonComponent: MenuButtonComponentType<MenuItemKey, MenuItemData>;
   TransitionComponent?: TransitionComponentType;
@@ -28,7 +28,7 @@ interface Props<MenuItemKey extends string, MenuItemData> {
 export const HoverMenu: <MenuItemKey extends string, MenuItemData>(
   props: Props<MenuItemKey, MenuItemData>
 ) => JSX.Element = <MenuItemKey extends string, MenuItemData>({
-  items,
+  items = [],
   activeKey,
   WrapperComponent = Fragment,
   MenuButtonComponent,
