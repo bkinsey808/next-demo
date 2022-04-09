@@ -59,6 +59,7 @@ export const HoverMenu: <MenuItemKey extends string, MenuItemData>(
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           onMouseDown={onMouseDown}
+          className="w-full"
         >
           <MenuButtonComponent
             activeKey={activeKey}

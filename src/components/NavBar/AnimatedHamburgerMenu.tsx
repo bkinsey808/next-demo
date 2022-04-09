@@ -14,7 +14,7 @@ export const AnimatedHamburgerMenu: FC<{
 }> = ({ isOpen, setIsOpen }) => {
   return (
     <button
-      className="group flex h-12 w-12 flex-col items-center justify-center rounded border-2 border-black"
+      className="group flex h-12 w-12 flex-col items-center justify-center rounded border-2 border-black sm:hidden"
       onClick={() => setIsOpen(!isOpen)}
     >
       {hamburgerMenuLineIsOpenCNs.map((isOpenCN, index) => (

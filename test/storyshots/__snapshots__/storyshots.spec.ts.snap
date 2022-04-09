@@ -8,6 +8,7 @@ exports[`Storyshots Components/Dark Mode Hover Menu/Dark Mode Hover Menu Dark Mo
     aria-expanded={false}
     aria-haspopup={true}
     aria-label="Select dark/light mode"
+    className="w-full"
     id="headlessui-menu-button-1"
     onClick={[Function]}
     onFocus={[Function]}
@@ -70,6 +71,7 @@ exports[`Storyshots Components/Hover Menu/Hover Menu Simple Example Hover Menu S
       aria-expanded={false}
       aria-haspopup={true}
       aria-label="Select Color"
+      className="w-full"
       id="headlessui-menu-button-2"
       onClick={[Function]}
       onFocus={[Function]}

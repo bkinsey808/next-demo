@@ -9,6 +9,7 @@ exports[`HoverMenuSimpleExample renders color 1`] = `
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Select Color"
+      class="w-full"
       id="headlessui-menu-button-1"
       type="button"
     >
@@ -32,6 +33,7 @@ exports[`HoverMenuSimpleExample renders color 2`] = `
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Select Color"
+      class="w-full"
       id="headlessui-menu-button-1"
       type="button"
     >

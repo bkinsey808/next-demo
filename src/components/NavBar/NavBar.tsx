@@ -38,7 +38,7 @@ export const NavBar: FC = () => {
         <div className="flex">
           <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </div>
-        <NavMenus navItems={navItems} />
+        <NavMenus isOpen={isOpen} navItems={navItems} />
         <div className="ml-auto flex">
           <DarkModeHoverMenu />
           <AnimatedHamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />

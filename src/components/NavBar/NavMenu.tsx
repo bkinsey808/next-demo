@@ -41,15 +41,17 @@ const getMenuButtonComponent = (navItem: NavItem) => {
           justify-left
           inline-flex 
           w-full
+          whitespace-nowrap 
           rounded-md 
-          bg-black 
-          bg-opacity-20 
-          px-4 py-2
+          bg-black bg-opacity-20
+          px-4 
+          py-2 
           text-sm 
-          font-medium 
-          text-white 
-          hover:bg-opacity-30                
-          focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
+          font-medium                
+          text-white hover:bg-opacity-30 focus-visible:ring-2
+          focus-visible:ring-white
+          focus-visible:ring-opacity-75
+          sm:w-auto
         "
       >
         {navItem.data.label}
@@ -111,13 +113,13 @@ const MenuItemComponent: MenuItemComponentType<string, NavItemData> = ({
   <div
     className={clsx(
       `
-          overflow-hidden
-          whitespace-normal
-          break-words
-          rounded-md
-          px-2
-          py-2 text-sm
-        `,
+        overflow-hidden
+        whitespace-normal
+        break-words
+        rounded-md
+        px-2
+        py-2 text-sm
+      `,
       {
         "bg-violet-500 text-white": active,
         "text-gray-900": !active,

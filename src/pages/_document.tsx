@@ -2,6 +2,13 @@ import { Html, Head, Main, NextScript } from "next/document";
 import { FC } from "react";
 import { useTernaryDarkMode } from "usehooks-ts";
 
+import { setCssCustomProperties } from "@/theme/utils";
+
+// client side only
+if (typeof window !== "undefined") {
+  setCssCustomProperties();
+}
+
 const Body: FC = () => {
   const { isDarkMode } = useTernaryDarkMode();
 
@@ -15,7 +22,7 @@ const Body: FC = () => {
 
 const Document: FC = () => {
   return (
-    <Html lang="en">
+    <Html lang="en" className="scrollbar-gutter-stable">
       <Head />
       <Body />
     </Html>
