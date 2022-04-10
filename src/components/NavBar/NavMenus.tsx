@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 import { useBreakpoint } from "@/hooks/tailwind";
 
@@ -11,6 +11,11 @@ export const NavMenus: FC<{ navItems: NavItem[]; isOpen: boolean }> = ({
   isOpen,
 }) => {
   const isSmBreakpoint = useBreakpoint("sm");
+
+  // @see https://github.com/kodingdotninja/use-tailwind-breakpoint/issues/2#issuecomment-1030703188
+  useEffect(() => {
+    window.dispatchEvent(new Event("resize"));
+  }, []);
 
   return (
     <div

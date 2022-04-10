@@ -2,7 +2,9 @@ const StylelintPlugin = require("stylelint-webpack-plugin");
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval';
+  script-src 'self'${
+    process.env.NODE_ENV === "production" ? "" : " 'unsafe-eval'"
+  };
   child-src example.com;
   style-src 'self' 'unsafe-inline';
   font-src 'self';  

@@ -129,12 +129,10 @@ export const useHoverMenu = <MenuItemKeyType>({
   };
 
   const getOnMenuItemButtonClick = (clickedKey: MenuItemKeyType) => () => {
-    console.log("getOnMenuItemButtonClick");
     setSelecting(true);
     setTimeout(() => {
       setSelecting(false);
     }, TIMEOUT_DURATION);
-    console.log({ onSelect, clickedKey });
     onSelect?.(clickedKey);
     setActive(false);
   };
