@@ -14,6 +14,7 @@ export const AnimatedHamburgerMenu: FC<{
 }> = ({ isOpen, setIsOpen }) => {
   return (
     <button
+      aria-label="Site Menu"
       className="group flex h-12 w-12 flex-col items-center justify-center rounded border-2 border-black sm:hidden"
       onClick={() => setIsOpen(!isOpen)}
     >

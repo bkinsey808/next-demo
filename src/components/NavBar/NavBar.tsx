@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FC, useRef, useState } from "react";
 
+import Logo from "../../../public/vercel.svg";
 import { DarkModeHoverMenu } from "../DarkModeHoverMenu";
 import { AnimatedHamburgerMenu } from "./AnimatedHamburgerMenu";
 import { NavMenus } from "./NavMenus";
@@ -36,7 +37,17 @@ export const NavBar: FC = () => {
     <header className="flex h-spacingHeaderHeight">
       <nav ref={navRef} className="relative flex w-full flex-row">
         <div className="flex">
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          {/* svg image seems to improperly cause a decrease in light house best practices score
+            @see https://www.angularfix.com/2022/02/how-do-i-fix-images-with-low-resolution.html */}
+          <Image
+            src={
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              Logo as any
+            }
+            alt="Vercel Logo"
+            width={283}
+            height={64}
+          />
         </div>
         <NavMenus isOpen={isOpen} navItems={navItems} />
         <div className="ml-auto flex">

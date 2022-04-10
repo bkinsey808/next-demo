@@ -8,19 +8,12 @@ import { FC, Fragment } from "react";
 import { HoverMenu } from "../HoverMenu";
 import {
   MenuButtonComponentType,
-  MenuItem,
   MenuItemComponentType,
   MenuItemsComponentType,
   TransitionComponentType,
   WrapperComponentType,
 } from "../HoverMenu/types";
 import { NavItem } from "./types";
-
-export interface PrimaryNavItem {
-  key: string;
-  data: NavItemData;
-  items: MenuItem<string, NavItemData>[];
-}
 
 export interface NavItemData {
   label: string;
@@ -43,7 +36,7 @@ const getMenuButtonComponent = (navItem: NavItem) => {
           w-full
           whitespace-nowrap 
           rounded-md 
-          bg-black bg-opacity-20
+          bg-black bg-opacity-70
           px-4 
           py-2 
           text-sm 

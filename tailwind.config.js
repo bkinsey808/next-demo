@@ -23,10 +23,7 @@ const filterDesignTokens = (prefix) =>
     );
 
 module.exports = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/tw-elements/dist/js/**/*.js",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: filterDesignTokens("color"),
